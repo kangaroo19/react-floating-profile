@@ -1,5 +1,11 @@
+import ReactFloatingProfile from "./lib/react-floating-profile";
+
 function App() {
-  return <>d</>;
+  return (
+    <>
+      <ReactFloatingProfile />
+    </>
+  );
 }
 
 export default App;

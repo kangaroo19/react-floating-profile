@@ -5,6 +5,7 @@
   "types": "dist/index.d.ts",
   "browser": "./browser/specific/main.js",
   "scripts": {
+    "dev":"vite",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
