@@ -16,8 +16,9 @@
     "noEmit": false,
     "jsx": "react-jsx",
     "declaration": true,
-    "outDir": "./dist"
+    "outDir": "./dist",
+    "types": ["vite/client"] // 추가
   },
-  // 이거 주석처리하면 이 프로젝트 폴더에서 만든 컴포넌트 테스트 가능
-  "include": ["./src/lib/**/*.tsx", "./src/lib/**/*.ts"]
+  "include": ["./src/lib/**/*.tsx", "./src/lib/**/*.ts"],
+  "exclude": ["node_modules"]
 }
