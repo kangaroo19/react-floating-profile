@@ -1,18 +1,13 @@
-export async function getUserProfile(token: string, name: string, blog: string) {
-  const url = "https://api.github.com/user";
-
+export async function getUserProfile(username: string) {
+  // const url = "https://api.github.com/user";
+  const url = `https://api.github.com/users/${username}`;
   const response = await fetch(url, {
-    method: "PATCH",
+    method: "GET",
     headers: {
       Accept: "application/vnd.github+json",
-      Authorization: `Bearer ${token}`,
       "X-GitHub-Api-Version": "2022-11-28",
       "Content-Type": "application/json",
     },
-    body: JSON.stringify({
-      name,
-      blog,
-    }),
   });
 
   if (!response.ok) {
