@@ -1,16 +1,16 @@
 {
   "name": "react-floating-profile",
-  "version": "0.0.3",
+  "version": "0.0.7",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "browser": "./browser/specific/main.js",
   "scripts": {
-    "dev":"vite",
+    "dev": "vite",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "prepare": "rmdir /s /q dist && mkdir dist && tsc"
+    "prepare": "rmdir /s /q dist && mkdir dist && tsc && mkdir dist\\styles && xcopy .\\src\\styles\\*.css .\\dist\\styles\\ /s /e"
   },
   "dependencies": {
     "react": "^18.3.1",
@@ -42,3 +42,5 @@
     ]
   }
 }
+
+// https://vccolombo.github.io/blog/tsc-how-to-copy-non-typescript-files-when-building/
