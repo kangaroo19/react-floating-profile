@@ -19,6 +19,6 @@
     "outDir": "./dist",
     "types": ["vite/client"] // 추가
   },
-  "include": ["src/**/*.tsx", "src/**/*.ts", "src/styles/**/*.css"],
+  // "include": ["src/**/*.tsx", "src/**/*.ts", "src/styles/**/*.css"],
   "exclude": ["node_modules"]
 }
