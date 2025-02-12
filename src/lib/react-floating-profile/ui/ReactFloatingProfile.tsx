@@ -23,7 +23,7 @@ export default function ReactFloatingProfile({ username }: PropTypes) {
       {userObj && (
         <ProfileProvider>
           <FloatingIcon avatar_url={userObj.avatar_url} />
-          <ProfileModal />
+          <ProfileModal userObj={userObj} />
         </ProfileProvider>
       )}
     </>

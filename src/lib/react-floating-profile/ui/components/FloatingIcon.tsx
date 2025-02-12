@@ -8,8 +8,12 @@ interface FloatingIconPropTypes {
 export default function FloatingIcon({ avatar_url }: FloatingIconPropTypes) {
   const { isOpen, setIsOpen } = useProfile();
   return (
-    <div className={styles.floatingButton} onClick={() => setIsOpen(!isOpen)}>
-      <img src={avatar_url} alt="" />
-    </div>
+    <>
+      {!isOpen && (
+        <div className={styles.floatingButton} onClick={() => setIsOpen(!isOpen)}>
+          <img src={avatar_url} alt="" />
+        </div>
+      )}
+    </>
   );
 }

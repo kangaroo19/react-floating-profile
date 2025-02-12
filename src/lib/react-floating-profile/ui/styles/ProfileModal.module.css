@@ -1,39 +1,79 @@
 .modalContainer {
   position: fixed;
-  bottom: 80px; /* 아이콘 바로 위에 위치 */
+  bottom: 20px; /* 아이콘 바로 위 */
   right: 20px;
   background: #151b23;
-  padding: 15px;
-  border-radius: 10px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-  width: 250px;
+  border: 1px solid #3d444d;
+  border-radius: 8px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
+  width: 280px;
   text-align: center;
   z-index: 1000;
+  padding: 15px;
+  font-family: Arial, sans-serif;
+  font-family: "Roboto", sans-serif;
 }
-
-.modalContent {
+.modal-content {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
+.modal_header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.modal_name {
+  font-weight: 700;
+  font-size: 2rem;
+}
+.modal_name,
+.modal_login {
+  text-align: left;
+  padding-left: 10px;
+}
+.profile-header {
+  font-size: 18px;
+  font-weight: bold;
+  color: #24292f;
+}
 
-.profileImg {
+.modal_avatar {
   width: 60px;
   height: 60px;
   border-radius: 50%;
-  margin-top: 10px;
+  margin: 10px 0;
+  border: 2px solid #3d444d;
+  background-color: black;
 }
 
-.closeBtn {
+.username {
+  font-size: 16px;
+  color: #0366d6;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.bio {
+  font-size: 14px;
+  color: #586069;
+  padding: 0 10px;
+  margin-bottom: 10px;
+}
+
+/* 📌 GitHub 스타일 버튼 */
+.close-btn {
   margin-top: 10px;
-  padding: 5px 10px;
-  background: #007bff;
+  padding: 6px 12px;
+  background: #0366d6;
   color: white;
+  font-size: 14px;
   border: none;
-  border-radius: 5px;
+  border-radius: 6px;
   cursor: pointer;
+  transition: background 0.2s;
 }
 
 .close-btn:hover {
-  background: #0056b3;
+  background: #005cc5;
 }
