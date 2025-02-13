@@ -1,0 +1,104 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  --toastify-toast-width: 320px;
+  --floating-color-light: #3d444d;
+  --floating-color-medium: #151b23;
+  --floating-color-dark: #000000;
+}
+
+/* Floating-Icon */
+.floating-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  background-color: black;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  font-size: 24px;
+  text-decoration: none;
+  box-sizing: border-box;
+  overflow: hidden; /* 👈 초과된 부분 숨기기 */
+}
+
+.floating-button > img {
+  width: 100%; /* 부모 요소에 맞게 조절 */
+  height: 100%;
+  object-fit: cover; /* 이미지가 부모 크기에 맞게 조절되면서 넘치지 않도록 */
+  border-radius: 50%; /* 이미지도 둥글게 */
+}
+
+.floating-button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+.floating-button:active {
+  transform: scale(0.95);
+}
+
+/* Modal */
+
+.modal-container {
+  position: fixed;
+  bottom: 20px; /* 아이콘 바로 위 */
+  right: 20px;
+  background: var(--floating-color-medium);
+  border: 1px solid var(--floating-color-light);
+  border-radius: 8px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
+  width: 280px;
+  text-align: center;
+  z-index: 1000;
+  padding: 15px;
+  font-family: Arial, sans-serif;
+  font-family: "Roboto", sans-serif;
+}
+
+.modal-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.modal-header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.modal-avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin: 10px 0;
+  border: 2px solid var(--floating-color-light);
+  background-color: var(--floating-color-dark);
+}
+
+.modal-name {
+  font-weight: 700;
+  font-size: 2rem;
+}
+.modal-name,
+.modal-login {
+  text-align: left;
+  padding-left: 10px;
+}

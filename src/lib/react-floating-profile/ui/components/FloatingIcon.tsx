@@ -1,4 +1,3 @@
-import styles from "../styles/FloatingIcon.module.css";
 import { useProfile } from "./ProfileProvider";
 
 interface FloatingIconPropTypes {
@@ -10,7 +9,7 @@ export default function FloatingIcon({ avatar_url }: FloatingIconPropTypes) {
   return (
     <>
       {!isOpen && (
-        <div className={styles.floatingButton} onClick={() => setIsOpen(!isOpen)}>
+        <div className="floating-button" onClick={() => setIsOpen(!isOpen)}>
           <img src={avatar_url} alt="" />
         </div>
       )}

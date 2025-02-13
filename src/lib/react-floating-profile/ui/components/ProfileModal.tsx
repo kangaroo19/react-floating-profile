@@ -1,5 +1,4 @@
 import { useProfile } from "./ProfileProvider";
-import styles from "../styles/ProfileModal.module.css";
 import { GitHubUser } from "../../../../../dist/lib/react-floating-profile/types";
 import { useEffect, useState } from "react";
 import { getUserReadme } from "../../api/getUserReadme";
@@ -21,13 +20,13 @@ export default function ProfileModal({ userObj }: ProfileModalPropTypes) {
   return (
     <>
       {isOpen && (
-        <div className={styles.modalContainer}>
+        <div className="modal-container">
           <div className="modal-content">
-            <div className={styles.modal_header}>
-              <img src={userObj.avatar_url} alt="" className={styles.modal_avatar} />
+            <div className="modal-header">
+              <img src={userObj.avatar_url} alt="" className="modal-avatar" />
               <div style={{ width: "100%" }}>
-                <div className={styles.modal_name}>{userObj.name}</div>
-                <div className={styles.modal_login}>{userObj.login}</div>
+                <div className="modal-name">{userObj.name}</div>
+                <div className="modal-login">{userObj.login}</div>
               </div>
             </div>
             <div dangerouslySetInnerHTML={{ __html: readme }} />
