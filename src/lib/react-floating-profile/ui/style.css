@@ -1,5 +1,5 @@
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
@@ -11,9 +11,10 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  --toastify-toast-width: 320px;
   --floating-color-light: #3d444d;
   --floating-color-medium: #151b23;
+  --floating-color-neutral: #0d1117;
+  --floating-color-shadowy: #010409;
   --floating-color-dark: #000000;
 }
 
@@ -61,7 +62,7 @@
   position: fixed;
   bottom: 20px; /* 아이콘 바로 위 */
   right: 20px;
-  background: var(--floating-color-medium);
+  background: var(--floating-color-shadowy);
   border: 1px solid var(--floating-color-light);
   border-radius: 8px;
   box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
@@ -101,4 +102,20 @@
 .modal-login {
   text-align: left;
   padding-left: 10px;
+}
+
+.readme {
+  border: 1px solid var(--floating-color-light);
+  background-color: var(--floating-color-neutral);
+  border-radius: 8px;
+}
+
+.close-btn {
+  margin: 10px 0;
+  width: 50%;
+  border: none;
+  background-color: var(--floating-color-light);
+  cursor: pointer;
+  font-size: 1rem;
+  padding: 0.0625rem 0;
 }

@@ -4,7 +4,7 @@ import FloatingIcon from "./components/FloatingIcon";
 import { GitHubUser } from "../types";
 import ProfileModal from "./components/ProfileModal";
 import { ProfileProvider } from "./components/ProfileProvider";
-import "../style.css";
+import "./style.css";
 interface PropTypes {
   token?: string;
   username?: string;

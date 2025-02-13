@@ -1,7 +1,7 @@
 import { useProfile } from "./ProfileProvider";
-import { GitHubUser } from "../../../../../dist/lib/react-floating-profile/types";
 import { useEffect, useState } from "react";
 import { getUserReadme } from "../../api/getUserReadme";
+import { GitHubUser } from "../../types";
 
 interface ProfileModalPropTypes {
   userObj: GitHubUser;
@@ -29,7 +29,7 @@ export default function ProfileModal({ userObj }: ProfileModalPropTypes) {
                 <div className="modal-login">{userObj.login}</div>
               </div>
             </div>
-            <div dangerouslySetInnerHTML={{ __html: readme }} />
+            <div className="readme" dangerouslySetInnerHTML={{ __html: readme }} />
             <button className="close-btn" onClick={() => setIsOpen(false)}>
               close
             </button>
