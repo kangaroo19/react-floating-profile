@@ -2,6 +2,7 @@ import { useProfile } from "./ProfileProvider";
 import { useEffect, useState } from "react";
 import { getUserReadme } from "../../api/getUserReadme";
 import { GitHubUser } from "../../types";
+import Markdown from "react-markdown";
 
 interface ProfileModalPropTypes {
   userObj: GitHubUser;
@@ -30,6 +31,7 @@ export default function ProfileModal({ userObj }: ProfileModalPropTypes) {
               </div>
             </div>
             <div className="readme" dangerouslySetInnerHTML={{ __html: readme }} />
+            {/* <Markdown>{readme.content}</Markdown> */}
             <button className="close-btn" onClick={() => setIsOpen(false)}>
               close
             </button>

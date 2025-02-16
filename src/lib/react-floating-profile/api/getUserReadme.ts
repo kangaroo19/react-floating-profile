@@ -1,6 +1,6 @@
 export async function getUserReadme(username: string) {
   // const url = "https://api.github.com/user";
-  const url = `https://raw.githubusercontent.com/${username}/${username}/refs/heads/main/README.md`;
+  const url = `https://raw.githubusercontent.com/${username}/${username}/refs/heads/master/README.md`;
   const response = await fetch(url, {
     method: "GET",
     headers: {

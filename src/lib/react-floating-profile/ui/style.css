@@ -108,6 +108,7 @@
   border: 1px solid var(--floating-color-light);
   background-color: var(--floating-color-neutral);
   border-radius: 8px;
+  color: white;
 }
 
 .close-btn {
