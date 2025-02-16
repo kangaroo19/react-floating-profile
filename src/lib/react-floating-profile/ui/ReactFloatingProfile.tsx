@@ -1,3 +1,5 @@
+"use client";
+
 import { useEffect, useRef, useState } from "react";
 import { getUserProfile } from "../api/getUserProfile";
 import FloatingIcon from "./components/FloatingIcon";
