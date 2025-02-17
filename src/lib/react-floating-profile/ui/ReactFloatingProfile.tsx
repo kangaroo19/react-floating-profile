@@ -2,11 +2,10 @@
 
 import { useEffect, useRef, useState } from "react";
 import { getUserProfile } from "../api/getUserProfile";
-import FloatingIcon from "./components/FloatingIcon";
 import { GitHubUser } from "../types";
-import ProfileModal from "./components/ProfileModal";
-import { ProfileProvider } from "./components/ProfileProvider";
 import "./style.css";
+import { ProfileIcon, ProfileModal, ProfileProvider } from "./components";
+
 interface PropTypes {
   token?: string;
   username?: string;
@@ -24,7 +23,9 @@ export default function ReactFloatingProfile({ username }: PropTypes) {
     <>
       {userObj && (
         <ProfileProvider>
-          <FloatingIcon avatar_url={userObj.avatar_url} />
+          <div className="icon-button-container">
+            <ProfileIcon avatar_url={userObj.avatar_url} size="large" />
+          </div>
           <ProfileModal userObj={userObj} />
         </ProfileProvider>
       )}

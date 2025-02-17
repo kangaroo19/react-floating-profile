@@ -19,19 +19,13 @@
 }
 
 /* Floating-Icon */
-.floating-button {
+.icon-button-container {
   position: fixed;
   bottom: 20px;
   right: 20px;
-  width: 60px;
-  height: 60px;
-  background-color: black;
-  color: white;
-  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   cursor: pointer;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   font-size: 24px;
@@ -39,22 +33,42 @@
   box-sizing: border-box;
   overflow: hidden; /* 👈 초과된 부분 숨기기 */
 }
-
-.floating-button > img {
+.icon-button {
+  border: 2px solid var(--floating-color-light);
+  background-color: var(--floating-color-dark);
+}
+.icon-button > img {
   width: 100%; /* 부모 요소에 맞게 조절 */
   height: 100%;
   object-fit: cover; /* 이미지가 부모 크기에 맞게 조절되면서 넘치지 않도록 */
   border-radius: 50%; /* 이미지도 둥글게 */
 }
 
-.floating-button:hover {
+/* .icon-button:hover {
   transform: scale(1.1);
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
-}
+} */
 
-.floating-button:active {
+.icon-button:active {
   transform: scale(0.95);
 }
+
+.icon-large {
+  width: 60px;
+  height: 60px;
+  border-radius: 30px;
+}
+.icon-medium {
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+}
+.icon-small {
+  width: 30px;
+  height: 30px;
+  border-radius: 15px;
+}
+/* Floating-Icon END*/
 
 /* Modal */
 
