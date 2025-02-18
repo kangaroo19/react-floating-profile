@@ -4,6 +4,7 @@ import { getUserReadme } from "../../api/getUserReadme";
 import { GitHubUser } from "../../types";
 import Markdown from "react-markdown";
 import ProfileIcon from "./ProfileIcon";
+import ReadMe from "./ReadMe";
 
 interface ProfileModalPropTypes {
   userObj: GitHubUser;
@@ -33,8 +34,8 @@ export default function ProfileModal({ userObj }: ProfileModalPropTypes) {
                 <div className="modal-login">{userObj.login}</div>
               </div>
             </div>
-            <div className="readme" dangerouslySetInnerHTML={{ __html: readme }} />
-            {/* <Markdown>{readme.content}</Markdown> */}
+            {/* <div className="readme-container" dangerouslySetInnerHTML={{ __html: readme }} /> */}
+            <ReadMe content={readme} />
             <button className="close-btn" onClick={() => setIsOpen(false)}>
               close
             </button>

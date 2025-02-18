@@ -118,13 +118,22 @@
   padding-left: 10px;
 }
 
-.readme {
+.readme-container {
+  border: 1px solid red;
+  width: 100%;
+  height: 300px;
   border: 1px solid var(--floating-color-light);
   background-color: var(--floating-color-neutral);
   border-radius: 8px;
   color: white;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
 }
-
+.readme-container img {
+  max-width: 100%;
+}
 .close-btn {
   margin: 10px 0;
   width: 50%;
