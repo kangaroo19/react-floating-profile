@@ -5,6 +5,7 @@ import { GitHubUser } from "../../types";
 import Markdown from "react-markdown";
 import ProfileIcon from "./ProfileIcon";
 import ReadMe from "./ReadMe";
+import ProfileHeader from "./ProfileHeader";
 
 interface ProfileModalPropTypes {
   userObj: GitHubUser;
@@ -25,16 +26,7 @@ export default function ProfileModal({ userObj }: ProfileModalPropTypes) {
       {isOpen && (
         <div className="modal-container">
           <div className="modal-content">
-            <div className="modal-header">
-              <ProfileIcon avatar_url={userObj.avatar_url} size="large" />
-
-              {/* <img src={userObj.avatar_url} alt="" className="modal-avatar" /> */}
-              <div style={{ width: "80%" }}>
-                <div className="modal-name">{userObj.name}</div>
-                <div className="modal-login">{userObj.login}</div>
-              </div>
-            </div>
-            {/* <div className="readme-container" dangerouslySetInnerHTML={{ __html: readme }} /> */}
+            <ProfileHeader userObj={userObj} />
             <ReadMe content={readme} />
             <button className="close-btn" onClick={() => setIsOpen(false)}>
               close
