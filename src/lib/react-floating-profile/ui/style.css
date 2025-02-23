@@ -118,9 +118,10 @@
 .profile-name,
 .profile-login {
   text-align: left;
-  padding-left: 10px;
 }
-
+.profile-bio {
+  text-align: left;
+}
 /* ProfileHeader COMPONENT END*/
 
 /* ReadMe COMPONENT */
