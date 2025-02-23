@@ -2,8 +2,6 @@ import { useProfile } from "./ProfileProvider";
 import { useEffect, useState } from "react";
 import { getUserReadme } from "../../api/getUserReadme";
 import { GitHubUser } from "../../types";
-import Markdown from "react-markdown";
-import ProfileIcon from "./ProfileIcon";
 import ReadMe from "./ReadMe";
 import ProfileHeader from "./ProfileHeader";
 

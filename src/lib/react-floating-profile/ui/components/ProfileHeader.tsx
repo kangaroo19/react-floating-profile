@@ -7,11 +7,11 @@ interface ProfileHeaderPropTypes {
 
 export default function ProfileHeader({ userObj }: ProfileHeaderPropTypes) {
   return (
-    <div className="modal-header">
+    <div className="profile-header-container">
       <ProfileIcon avatar_url={userObj.avatar_url} size="large" />
       <div style={{ width: "80%" }}>
-        <div className="modal-name">{userObj.name}</div>
-        <div className="modal-login">
+        <div className="profile-name">{userObj.name}</div>
+        <div className="profile-login">
           {userObj.login} / {userObj.location}
         </div>
       </div>

@@ -31,23 +31,19 @@
   font-size: 24px;
   text-decoration: none;
   box-sizing: border-box;
-  overflow: hidden; /* 👈 초과된 부분 숨기기 */
+  overflow: hidden;
 }
+
 .icon-button {
   border: 2px solid var(--floating-color-light);
   background-color: var(--floating-color-dark);
 }
 .icon-button > img {
-  width: 100%; /* 부모 요소에 맞게 조절 */
+  width: 100%;
   height: 100%;
-  object-fit: cover; /* 이미지가 부모 크기에 맞게 조절되면서 넘치지 않도록 */
-  border-radius: 50%; /* 이미지도 둥글게 */
+  object-fit: cover;
+  border-radius: 50%;
 }
-
-/* .icon-button:hover {
-  transform: scale(1.1);
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
-} */
 
 .icon-button:active {
   transform: scale(0.95);
@@ -70,7 +66,7 @@
 }
 /* Floating-Icon END*/
 
-/* Modal */
+/* ProfileModal COMPONENT */
 
 .modal-container {
   width: 350px;
@@ -93,7 +89,10 @@
   flex-direction: column;
   align-items: center;
 }
-.modal-header {
+/* ProfileModal COMPONENT END*/
+
+/* ProfileHeader COMPONENT*/
+.profile-header-container {
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -101,25 +100,19 @@
   align-items: center;
 }
 
-.modal-avatar {
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  margin: 10px 0;
-  border: 2px solid var(--floating-color-light);
-  background-color: var(--floating-color-dark);
-}
-
-.modal-name {
+.profile-name {
   font-weight: 700;
   font-size: 2rem;
 }
-.modal-name,
-.modal-login {
+.profile-name,
+.profile-login {
   text-align: left;
   padding-left: 10px;
 }
-/* README COMPONENT */
+
+/* ProfileHeader COMPONENT END*/
+
+/* ReadMe COMPONENT */
 .readme-container {
   border: 1px solid red;
   width: 100%;
@@ -145,3 +138,4 @@
   font-size: 1rem;
   padding: 0.0625rem 0;
 }
+/* README COMPONENT END*/
