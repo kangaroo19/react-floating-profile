@@ -24,7 +24,7 @@ export default function ReactFloatingProfile({ username }: PropTypes) {
       {userObj && (
         <ProfileProvider>
           <div className="icon-button-container">
-            <ProfileIcon avatar_url={userObj.avatar_url} size="large" isClick />
+            <ProfileIcon avatar_url={userObj.avatar_url} size="large" action />
           </div>
           <ProfileModal userObj={userObj} />
         </ProfileProvider>

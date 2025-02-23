@@ -114,7 +114,6 @@
 
 /* ReadMe COMPONENT */
 .readme-container {
-  border: 1px solid red;
   width: 100%;
   max-height: 400px;
   border: 1px solid var(--floating-color-light);
