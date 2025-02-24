@@ -1,19 +1,18 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { getUserProfile } from "../api/getUserProfile";
-import { GitHubUser } from "../types";
 import "./style.css";
 import { ProfileIcon, ProfileModal, ProfileProvider } from "./components";
+import { GitHubUser } from "../types";
 
 interface PropTypes {
-  token?: string;
-  username?: string;
+  username: string;
+  pinnedRepo?: [string] | [string, string] | [string, string, string] | [string, string, string, string];
 }
 
 export default function ReactFloatingProfile({ username }: PropTypes) {
   const [userObj, setUserObj] = useState<GitHubUser | null>(null);
-  const modalRef = useRef<HTMLDivElement>(null);
   useEffect(() => {
     getUserProfile(username!)
       .then((data) => setUserObj(data))

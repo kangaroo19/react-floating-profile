@@ -5,8 +5,9 @@ import ReactFloatingProfile from "./lib/react-floating-profile";
 function App() {
   return (
     <>
-      <ReactFloatingProfile username="D-Sketon" />
-      {/* <ReactFloatingProfile username="kangaroo19" /> */}
+      {/* <ReactFloatingProfile username="yooha0518" /> */}
+      {/* <ReactFloatingProfile username="femmefatalehaein" /> */}
+      <ReactFloatingProfile username="kangaroo19" />
     </>
   );
 }

@@ -79,7 +79,7 @@
 /* ProfileModal COMPONENT */
 
 .modal-container {
-  width: 350px;
+  width: 450px;
   position: fixed;
   bottom: 20px; /* 아이콘 바로 위 */
   right: 20px;
@@ -93,7 +93,9 @@
   font-family: Arial, sans-serif;
   font-family: "Roboto", sans-serif;
 }
-
+.modal-container ul {
+  text-align: left;
+}
 .modal-content {
   width: 100%;
   display: flex;
