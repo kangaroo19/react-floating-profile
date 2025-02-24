@@ -4,17 +4,12 @@ import { useEffect, useState } from "react";
 import { getUserProfile } from "../api/getUserProfile";
 import "./style.css";
 import { ProfileIcon, ProfileModal, ProfileProvider } from "./components";
-import { GitHubUser } from "../types";
+import { GitHubUser, MainOption } from "../types";
 
-interface PropTypes {
-  username: string;
-  pinnedRepo?: [string] | [string, string] | [string, string, string] | [string, string, string, string];
-}
-
-export default function ReactFloatingProfile({ username }: PropTypes) {
+export default function ReactFloatingProfile({ userName, pinnedRepoArr }: MainOption) {
   const [userObj, setUserObj] = useState<GitHubUser | null>(null);
   useEffect(() => {
-    getUserProfile(username!)
+    getUserProfile(userName!)
       .then((data) => setUserObj(data))
       .catch((error) => console.error("❌ 업데이트 실패:", error));
   }, []);
@@ -25,7 +20,7 @@ export default function ReactFloatingProfile({ username }: PropTypes) {
           <div className="icon-button-container">
             <ProfileIcon avatar_url={userObj.avatar_url} size="large" action />
           </div>
-          <ProfileModal userObj={userObj} />
+          <ProfileModal userObj={userObj} pinnedRepoArr={pinnedRepoArr} />
         </ProfileProvider>
       )}
     </>

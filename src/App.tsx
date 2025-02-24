@@ -7,7 +7,7 @@ function App() {
     <>
       {/* <ReactFloatingProfile username="yooha0518" /> */}
       {/* <ReactFloatingProfile username="femmefatalehaein" /> */}
-      <ReactFloatingProfile username="kangaroo19" />
+      <ReactFloatingProfile userName="kangaroo19" pinnedRepoArr={["neki99"]} />
     </>
   );
 }

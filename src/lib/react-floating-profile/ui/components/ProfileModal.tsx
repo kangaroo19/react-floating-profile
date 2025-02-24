@@ -1,15 +1,12 @@
 import { useProfile } from "./ProfileProvider";
 import { useEffect, useState } from "react";
 import { getUserReadme } from "../../api/getUserReadme";
-import { GitHubUser } from "../../types";
+import { GitHubUser, ModalOption } from "../../types";
 import ReadMe from "./ReadMe";
 import ProfileHeader from "./ProfileHeader";
+import PinnedRepoItem from "./PinnedRepoItem";
 
-interface ProfileModalPropTypes {
-  userObj: GitHubUser;
-}
-
-export default function ProfileModal({ userObj }: ProfileModalPropTypes) {
+export default function ProfileModal({ userObj, pinnedRepoArr }: ModalOption) {
   const { isOpen, setIsOpen } = useProfile();
   const [readme, setReadme] = useState("");
   useEffect(() => {
@@ -26,6 +23,9 @@ export default function ProfileModal({ userObj }: ProfileModalPropTypes) {
           <div className="modal-content">
             <ProfileHeader userObj={userObj} />
             <ReadMe content={readme} />
+            {pinnedRepoArr?.map((item) => (
+              <PinnedRepoItem repoName={item} />
+            ))}
             <button className="close-btn" onClick={() => setIsOpen(false)}>
               close
             </button>

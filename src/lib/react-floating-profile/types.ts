@@ -34,3 +34,16 @@ export interface GitHubUser {
   updated_at: string;
 }
 
+/* Public Component Type*/
+export interface MainOption {
+  userName: string;
+  pinnedRepoArr?: [string] | [string, string] | [string, string, string] | [string, string, string, string];
+}
+
+export interface ModalOption {
+  userObj: GitHubUser;
+  pinnedRepoArr?: [string] | [string, string] | [string, string, string] | [string, string, string, string];
+}
+export interface PinnedRepoItemPropTypes {
+  repoName: string;
+}
