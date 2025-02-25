@@ -20,5 +20,5 @@
     "types": ["vite/client"] // 추가
   },
   "include": ["./src/lib/**/*.tsx", "./src/lib/**/*.ts"],
-  "exclude": ["node_modules"]
+  "exclude": ["node_modules", "src/App.tsx", "src/main.tsx"]
 }
