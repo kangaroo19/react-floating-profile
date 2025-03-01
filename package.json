@@ -1,6 +1,6 @@
 {
   "name": "react-floating-profile",
-  "version": "0.2.1",
+  "version": "0.2.82",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "browser": "./browser/specific/main.js",
@@ -13,8 +13,8 @@
     "prepare": "if exist dist rmdir /s /q dist & mkdir dist & tsc & xcopy src\\lib\\react-floating-profile\\ui\\style.css dist\\ui\\style.css /y /i"
   },
   "exports": {
-    "default": "./dist/index.d.ts",
-    "types": "./dist/types.d.ts"
+    "types": "./dist/types.d.ts",
+    "default": "./dist/index.js"
   },
   "dependencies": {
     "react": "^18.3.1",
