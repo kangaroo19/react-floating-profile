@@ -148,6 +148,30 @@
 }
 /* README COMPONENT END*/
 
+/* PinnedRepoItem COMPONENT*/
+.repo-item-container {
+  width: 100%;
+  border: 1px solid var(--floating-color-light);
+  background-color: var(--floating-color-neutral);
+  border-radius: 8px;
+  padding: 0.625rem;
+  margin: 0.625rem;
+}
+
+.repo-title {
+  text-decoration: none;
+  display: block;
+  font-size: 1.2rem;
+  text-align: left;
+  font-weight: 700;
+  color: #4493f8;
+}
+
+.repo-desc {
+  text-align: left;
+}
+/* PinnedRepoItem COMPONENT END */
+
 /* Media Query */
 
 @media screen and (max-width: 720px) {

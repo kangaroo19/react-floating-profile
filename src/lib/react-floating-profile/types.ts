@@ -37,13 +37,21 @@ export interface GitHubUser {
 /* Public Component Type*/
 export interface MainOption {
   userName: string;
-  pinnedRepoArr?: [string] | [string, string] | [string, string, string] | [string, string, string, string];
+  pinnedRepoArr: [] | [string] | [string, string] | [string, string, string] | [string, string, string, string];
 }
 
 export interface ModalOption {
   userObj: GitHubUser;
-  pinnedRepoArr?: [string] | [string, string] | [string, string, string] | [string, string, string, string];
+  pinnedRepoArr?: RepoItemType[];
 }
 export interface PinnedRepoItemPropTypes {
-  repoName: string;
+  pinnedRepoItem: RepoItemType;
+}
+
+export interface RepoItemType {
+  id: number;
+  name: string;
+  description: string;
+  language: string;
+  html_url: string;
 }

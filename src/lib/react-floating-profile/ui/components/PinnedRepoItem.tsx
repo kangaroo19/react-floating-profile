@@ -1,10 +1,12 @@
-import { useEffect } from "react";
 import { PinnedRepoItemPropTypes } from "../../types";
-import getRepoItem from "../../api/getRepoItem";
 
-export default function PinnedRepoItem({ repoName }: PinnedRepoItemPropTypes) {
-  useEffect(() => {
-    getRepoItem(repoName);
-  }, []);
-  return <div>{repoName}</div>;
+export default function PinnedRepoItem({ pinnedRepoItem }: PinnedRepoItemPropTypes) {
+  return (
+    <div className="repo-item-container">
+      <a className="repo-title" href={pinnedRepoItem.html_url} target="_blank">
+        {pinnedRepoItem.name}
+      </a>
+      <div className="repo-desc">{pinnedRepoItem.description}</div>
+    </div>
+  );
 }

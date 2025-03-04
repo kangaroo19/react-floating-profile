@@ -7,6 +7,7 @@ import ProfileHeader from "./ProfileHeader";
 import PinnedRepoItem from "./PinnedRepoItem";
 
 export default function ProfileModal({ userObj, pinnedRepoArr }: ModalOption) {
+  console.log(pinnedRepoArr);
   const { isOpen, setIsOpen } = useProfile();
   const [readme, setReadme] = useState("");
   useEffect(() => {
@@ -24,7 +25,7 @@ export default function ProfileModal({ userObj, pinnedRepoArr }: ModalOption) {
             <ProfileHeader userObj={userObj} />
             <ReadMe content={readme} />
             {pinnedRepoArr?.map((item) => (
-              <PinnedRepoItem repoName={item} />
+              <PinnedRepoItem pinnedRepoItem={item} />
             ))}
             <button className="close-btn" onClick={() => setIsOpen(false)}>
               close
