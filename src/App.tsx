@@ -1,6 +1,6 @@
 // import ReactFloatingProfile from "../dist";
 
-import ReactFloatingProfile from "../dist/ui/ReactFloatingProfile";
+import ReactFloatingProfile from "./lib/react-floating-profile/ui/ReactFloatingProfile";
 
 function App() {
   return (

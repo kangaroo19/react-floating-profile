@@ -1,16 +1,4 @@
 :root {
-  font-family: sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
   --floating-color-light: #3d444d;
   --floating-color-medium: #151b23;
   --floating-color-neutral: #0d1117;
@@ -76,9 +64,13 @@
 }
 /* Floating-Icon END*/
 
-/* ProfileModal COMPONENT */
-
+/* ProfileModal COMPONENT, Top-level class */
 .modal-container {
+  z-index: 9999;
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
   width: 450px;
   position: fixed;
   bottom: 20px; /* 아이콘 바로 위 */
