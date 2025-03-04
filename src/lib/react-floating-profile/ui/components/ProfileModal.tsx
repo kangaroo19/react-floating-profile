@@ -1,7 +1,7 @@
 import { useProfile } from "./ProfileProvider";
 import { useEffect, useState } from "react";
 import { getUserReadme } from "../../api/getUserReadme";
-import { GitHubUser, ModalOption } from "../../types";
+import { ModalOption } from "../../types";
 import ReadMe from "./ReadMe";
 import ProfileHeader from "./ProfileHeader";
 import PinnedRepoItem from "./PinnedRepoItem";
