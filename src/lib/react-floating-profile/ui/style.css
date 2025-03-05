@@ -7,6 +7,7 @@
   --floating-margin: 0.625rem;
   --floating-padding: 0.625rem;
   --floating-radius: 0.5rem;
+  --floating-icon-location: 20px;
 }
 *::-webkit-scrollbar {
   display: none;
@@ -22,8 +23,8 @@
 /* Floating-Icon */
 .icon-button-container {
   position: fixed;
-  bottom: 20px;
-  right: 20px;
+  bottom: var(--floating-icon-location);
+  right: var(--floating-icon-location);
   display: flex;
   align-items: center;
   justify-content: center;

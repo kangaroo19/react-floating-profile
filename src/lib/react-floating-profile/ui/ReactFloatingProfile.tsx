@@ -6,7 +6,7 @@ import { ProfileIcon, ProfileModal, ProfileProvider } from "./components";
 import { GitHubUser, MainOption, RepoItemType } from "../types";
 import { getRepoItem, getUserProfile } from "../api";
 
-export default function ReactFloatingProfile({ userName, pinnedRepoArr }: MainOption) {
+export default function ReactFloatingProfile({ userName, pinnedRepoArr = [], location = "bottom-right" }: MainOption) {
   const [userObj, setUserObj] = useState<GitHubUser | null>(null);
   const [pinnedRepoItemArr, setPinnedRepoItemArr] = useState<RepoItemType[] | []>([]);
   useEffect(() => {
