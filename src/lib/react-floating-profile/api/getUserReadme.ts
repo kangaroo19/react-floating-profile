@@ -21,8 +21,6 @@ export default async function getUserReadme(username: string) {
     throw new Error("download_url not found in response.");
   }
 
-  console.log("Download URL:", downloadUrl);
-
   // 실제 README.md 내용 가져오기
   const response = await fetch(downloadUrl);
 

@@ -4,6 +4,9 @@
   --floating-color-neutral: #0d1117;
   --floating-color-shadowy: #010409;
   --floating-color-dark: #000000;
+  --floating-margin: 0.625rem;
+  --floating-padding: 0.625rem;
+  --floating-radius: 0.5rem;
 }
 *::-webkit-scrollbar {
   display: none;
@@ -77,7 +80,7 @@
   right: 20px;
   background: var(--floating-color-shadowy);
   border: 1px solid var(--floating-color-light);
-  border-radius: 8px;
+  border-radius: var(--floating-radius);
   box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
   text-align: center;
   padding: 15px;
@@ -109,12 +112,11 @@
   font-size: 2rem;
 }
 .profile-name,
-.profile-login {
-  text-align: left;
-}
+.profile-login,
 .profile-bio {
   text-align: left;
 }
+
 /* ProfileHeader COMPONENT END*/
 
 /* ReadMe COMPONENT */
@@ -125,13 +127,14 @@
   max-height: 400px;
   border: 1px solid var(--floating-color-light);
   background-color: var(--floating-color-neutral);
-  border-radius: 8px;
+  border-radius: var(--floating-radius);
   color: white;
   overflow-y: scroll;
   overflow-x: hidden;
   display: flex;
   flex-direction: column;
   object-fit: cover;
+  margin-bottom: var(--floating-margin);
 }
 .readme-container img {
   max-width: 100%;
@@ -147,14 +150,17 @@
 }
 /* README COMPONENT END*/
 
-/* PinnedRepoItem COMPONENT*/
-.repo-item-container {
+/* PinnedRepo COMPONENT*/
+.repo-container {
   width: 100%;
+}
+
+.repo-item {
   border: 1px solid var(--floating-color-light);
   background-color: var(--floating-color-neutral);
-  border-radius: 8px;
-  padding: 0.625rem;
-  margin: 0.625rem;
+  border-radius: var(--floating-radius);
+  padding: var(--floating-padding);
+  margin-bottom: var(--floating-margin);
 }
 
 .repo-title {
@@ -169,7 +175,7 @@
 .repo-desc {
   text-align: left;
 }
-/* PinnedRepoItem COMPONENT END */
+/* PinnedRepo COMPONENT END */
 
 /* Media Query */
 

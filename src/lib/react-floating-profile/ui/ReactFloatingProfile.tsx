@@ -17,7 +17,7 @@ export default function ReactFloatingProfile({ userName, pinnedRepoArr }: MainOp
 
     getRepoItem(userName, pinnedRepoArr)
       .then((data) => setPinnedRepoItemArr(data))
-      .catch(() => console.error("유저정보 못 가져옴"));
+      .catch(() => console.error("레포정보 못 가져옴"));
   }, []);
   return (
     <>

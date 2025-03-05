@@ -13,7 +13,7 @@ export default function ProfileHeader({ userObj }: ProfileHeaderPropTypes) {
         <div className="profile-name">{userObj.name}</div>
         <div className="profile-bio">{userObj.bio}</div>
         <div className="profile-login">
-          {userObj.login} / {userObj.location}
+          {userObj.login} {userObj.location && `/ ${userObj.location}`}
         </div>
         <div className="profile-bio">{userObj.company}</div>
       </div>
