@@ -1,7 +1,7 @@
 import { RepoItemType } from "../types";
 
-export default async function getRepoItemArr(pinnedRepoItemArr: string[]): Promise<RepoItemType[]> {
-  const REPO_URL = "https://api.github.com/repos/kangaroo19/";
+export default async function getRepoItem(username: string, pinnedRepoItemArr: string[]): Promise<RepoItemType[]> {
+  const REPO_URL = `https://api.github.com/repos/${username}/`;
 
   // 병렬 요청 처리
   const requests = pinnedRepoItemArr.map(async (repoName) => {

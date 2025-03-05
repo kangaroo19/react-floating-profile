@@ -1,4 +1,4 @@
-export async function getUserReadme(username: string) {
+export default async function getUserReadme(username: string) {
   const README_OBJ_URL = `https://api.github.com/repos/${username}/${username}/contents/README.md`;
 
   // README 파일 정보 가져오기
