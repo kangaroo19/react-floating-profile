@@ -5,7 +5,12 @@ interface ProfileIconPropTypes {
   size?: "small" | "medium" | "large";
   action?: boolean;
 }
-
+/**
+ *
+ * @param avatar_url 이미지 url
+ * @param size 아이콘 크기
+ * @param action 클릭이벤트 실행 여부
+ */
 export default function ProfileIcon({ avatar_url, size = "medium", action = false }: ProfileIconPropTypes) {
   const { isOpen, setIsOpen } = useProfile();
   const onClickIcon = () => {
