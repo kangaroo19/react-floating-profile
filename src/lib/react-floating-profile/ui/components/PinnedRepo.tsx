@@ -12,6 +12,7 @@ export default function PinnedRepo({ pinnedRepoArr }: PinnedRepoItemPropTypes) {
             {item.name}
           </a>
           <div className="repo-desc">{item.description}</div>
+          <div className="repo-lan">{item.language}</div>
         </div>
       ))}
     </div>
