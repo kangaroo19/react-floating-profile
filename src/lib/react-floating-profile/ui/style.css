@@ -11,12 +11,13 @@
   --floating-text-gray: #9198a1;
   --floating-text-white: rgba(255, 255, 255, 0.87);
   --flaoting-text-blue: #4493f8;
-  --floating-text-lg: 2rem;
+  --floating-text-xl: 2rem;
+  --floating-text-lg: 1.4rem;
   --floating-text-md: 1.2rem;
-  --floating-text-sm: 0.8rem;
+  --floating-text-sm: 0.925rem;
+  --floating-text-xs: 0.8rem;
   --floating-border-thin: 1px solid var(--floating-color-light);
   --floating-border-thick: 2px solid var(--floating-color-light);
-
 }
 *::-webkit-scrollbar {
   display: none;
@@ -80,7 +81,7 @@
 .modal-container {
   z-index: 99999;
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
+  color: var(--floating-text-white);
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   width: 450px;
@@ -91,9 +92,8 @@
   border: var(--floating-border-thin);
   border-radius: var(--floating-radius);
   box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
-  text-align: center;
   padding: 15px;
-  font-family: Arial, sans-serif;
+  /* font-family: Arial, sans-serif; */
   font-family: "Roboto", sans-serif;
 }
 .modal-container ul {
@@ -118,18 +118,22 @@
 
 .profile-name {
   font-weight: 700;
-  font-size: var(--floating-text-lg);
+  font-size: var(--floating-text-xl);
 }
 .profile-name,
 .profile-login,
 .profile-bio {
   text-align: left;
 }
-
+.profile-login,
+.profile-bio{
+  font-size: var(--floating-text-sm);
+}
 /* ProfileHeader COMPONENT END*/
 
 /* ReadMe COMPONENT */
 .readme-container {
+  text-align: center;
   position: relative;
   box-sizing: border-box;
   width: 100%;
@@ -181,13 +185,22 @@
 }
 .repo-title,
 .repo-desc,
-.repo-lan {
+.repo-lan,
+.repo-label {
   text-align: left;
 }
-
+.repo-desc {
+  font-size: var(--floating-text-sm);
+}
+.repo-label {
+  font-weight: 700;
+  font-size: var(--floating-text-lg);
+  color: var(--floating-text-white);
+  padding: var(--floating-padding);
+}
 .repo-lan {
   color: var(--floating-text-gray);
-  font-size: var(--floating-text-sm);
+  font-size: var(--floating-text-xs);
 }
 /* PinnedRepo COMPONENT END */
 
