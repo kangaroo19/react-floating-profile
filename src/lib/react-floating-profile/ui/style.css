@@ -153,13 +153,10 @@
   max-width: 100%;
 }
 .close-btn {
-  margin: 10px 0;
-  width: 50%;
   border: none;
-  background-color: var(--floating-color-light);
+  background-color: transparent;
   cursor: pointer;
   font-size: 1rem;
-  padding: 0.0625rem 0;
 }
 /* README COMPONENT END*/
 
