@@ -1,4 +1,4 @@
-import { useProfile } from "./ProfileProvider";
+import { useProfile } from "@context";
 
 interface ProfileIconPropTypes {
   avatar_url: string;

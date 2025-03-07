@@ -1,17 +1,14 @@
-import { useProfile } from "./ProfileProvider";
 import { useEffect, useState } from "react";
-import { ModalOption } from "../../types";
-import ReadMe from "./ReadMe";
-import ProfileHeader from "./ProfileHeader";
-import PinnedRepo from "./PinnedRepo";
-import { getUserReadme } from "../../api";
-import { CloseButton } from "../../components/Button";
+import { PinnedRepo, ProfileHeader, ReadMe } from "./components";
+import { ModalOption } from "@types";
+import { getUserReadme } from "@api";
+import { CloseButton } from "@components";
+import { useProfile } from "@context";
 
-// 폴더 구조를 지금 컴포넌트 계층구조처럼 만들어보기
 // SagathiyaJaydeep 얘처럼 이름이 없는경우도 있음
 
-export default function ProfileModal({ userObj, pinnedRepoArr }: ModalOption) {
-  const { isOpen, setIsOpen } = useProfile();
+export default function FloatingModal({ userObj, pinnedRepoArr }: ModalOption) {
+  const { isOpen } = useProfile();
   const [readme, setReadme] = useState("");
   useEffect(() => {
     getUserReadme(userObj.login)
@@ -25,9 +22,7 @@ export default function ProfileModal({ userObj, pinnedRepoArr }: ModalOption) {
       {isOpen && (
         <div className="modal-container">
           <div className="modal-content">
-            <div style={{ width: "100%", display: "flex", justifyContent: "flex-end" }}>
-              <CloseButton />
-            </div>
+            <CloseButton />
             <ProfileHeader userObj={userObj} />
             <ReadMe content={readme} />
             <PinnedRepo pinnedRepoArr={pinnedRepoArr!} />

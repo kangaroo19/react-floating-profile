@@ -1,4 +1,4 @@
-import { RepoItemType } from "../../types";
+import { RepoItemType } from "@types";
 
 interface PinnedRepoItemPropTypes {
   pinnedRepoArr: RepoItemType[];

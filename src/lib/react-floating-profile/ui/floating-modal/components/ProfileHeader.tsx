@@ -1,5 +1,5 @@
-import { GitHubUser } from "../../types";
-import ProfileIcon from "./ProfileIcon";
+import { ProfileIcon } from "@components";
+import { GitHubUser } from "@types";
 
 interface ProfileHeaderPropTypes {
   userObj: GitHubUser;
