@@ -1,13 +1,22 @@
 import Markdown from "react-markdown";
 import rehypeRaw from "rehype-raw";
+import remarkGemoji from "remark-gemoji";
+import remarkGfm from "remark-gfm";
+import remarkDirective from "remark-directive";
 
 interface ReadMePropTypes {
   content: string;
 }
 
 export default function ReadMe({ content }: ReadMePropTypes) {
+  console.log(content);
   return (
-    <Markdown className="readme-container" children={convertGitHubImageUrls(content)} rehypePlugins={[rehypeRaw]} />
+    <Markdown
+      className="readme-container"
+      remarkPlugins={[remarkGemoji, remarkGfm, remarkDirective]}
+      children={convertGitHubImageUrls(content)}
+      rehypePlugins={[rehypeRaw]}
+    />
   );
 }
 

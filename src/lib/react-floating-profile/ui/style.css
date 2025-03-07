@@ -112,7 +112,7 @@
   width: 100%;
   display: flex;
   justify-content: space-between;
-  margin: 15px auto;
+  margin-bottom: var(--floating-margin);
   align-items: center;
 }
 
