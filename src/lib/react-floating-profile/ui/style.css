@@ -121,13 +121,16 @@
   font-size: var(--floating-text-xl);
 }
 .profile-name,
-.profile-login,
+.profile-login-location,
 .profile-bio {
   text-align: left;
 }
-.profile-login,
-.profile-bio{
+.profile-login-location,
+.profile-bio {
   font-size: var(--floating-text-sm);
+}
+.profile-login {
+  font-weight: 700;
 }
 /* ProfileHeader COMPONENT END*/
 
