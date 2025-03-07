@@ -1,13 +1,14 @@
-import { useProfile } from "./ProfileProvider";
 import { useEffect, useState } from "react";
-import { ModalOption } from "../../types";
-import ReadMe from "./ReadMe";
-import ProfileHeader from "./ProfileHeader";
-import PinnedRepo from "./PinnedRepo";
-import { getUserReadme } from "../../api";
+import { PinnedRepo, ProfileHeader, ReadMe } from "./components";
+import { ModalOption } from "@types";
+import { getUserReadme } from "@api";
+import { CloseButton } from "@components";
+import { useProfile } from "@context";
 
-export default function ProfileModal({ userObj, pinnedRepoArr }: ModalOption) {
-  const { isOpen, setIsOpen } = useProfile();
+// SagathiyaJaydeep 얘처럼 이름이 없는경우도 있음
+
+export default function FloatingModal({ userObj, pinnedRepoArr }: ModalOption) {
+  const { isOpen } = useProfile();
   const [readme, setReadme] = useState("");
   useEffect(() => {
     getUserReadme(userObj.login)
@@ -21,12 +22,10 @@ export default function ProfileModal({ userObj, pinnedRepoArr }: ModalOption) {
       {isOpen && (
         <div className="modal-container">
           <div className="modal-content">
+            <CloseButton />
             <ProfileHeader userObj={userObj} />
             <ReadMe content={readme} />
             <PinnedRepo pinnedRepoArr={pinnedRepoArr!} />
-            <button className="close-btn" onClick={() => setIsOpen(false)}>
-              close
-            </button>
           </div>
         </div>
       )}

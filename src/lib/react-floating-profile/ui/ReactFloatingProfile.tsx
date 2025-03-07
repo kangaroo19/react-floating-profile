@@ -2,9 +2,11 @@
 
 import { useEffect, useState } from "react";
 import "./style.css";
-import { ProfileIcon, ProfileModal, ProfileProvider } from "./components";
-import { GitHubUser, MainOption, RepoItemType } from "../types";
-import { getRepoItem, getUserProfile } from "../api";
+import FloatingModal from "./floating-modal";
+import FloatingIcon from "./floating-icon";
+import { GitHubUser, RepoItemType } from "@types";
+import { getRepoItem, getUserProfile } from "@api";
+import { ProfileProvider } from "@context";
 
 export default function ReactFloatingProfile({ userName, pinnedRepoArr = [], location = "bottom-right" }: MainOption) {
   const [userObj, setUserObj] = useState<GitHubUser | null>(null);
@@ -23,10 +25,8 @@ export default function ReactFloatingProfile({ userName, pinnedRepoArr = [], loc
     <>
       {userObj && (
         <ProfileProvider>
-          <div className="icon-button-container">
-            <ProfileIcon avatar_url={userObj.avatar_url} size="large" action />
-          </div>
-          <ProfileModal userObj={userObj} pinnedRepoArr={pinnedRepoItemArr} />
+          <FloatingIcon avatar_url={userObj.avatar_url} />
+          <FloatingModal userObj={userObj} pinnedRepoArr={pinnedRepoItemArr} />
         </ProfileProvider>
       )}
     </>
