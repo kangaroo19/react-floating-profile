@@ -7,6 +7,7 @@ interface OrganizationPropTypes {
 }
 
 export default function Organization({ orgArr }: OrganizationPropTypes) {
+  console.log(orgArr);
   return (
     <div className="org-container">
       {orgArr.map((item) => (

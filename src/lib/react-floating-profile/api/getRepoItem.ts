@@ -24,6 +24,8 @@ export default async function getRepoItem(username: string, pinnedRepoItemArr: s
       description: result.description,
       language: result.language,
       html_url: result.html_url,
+      stargazers_count: result.stargazers_count,
+      forks_count: result.forks_count,
     };
   });
 

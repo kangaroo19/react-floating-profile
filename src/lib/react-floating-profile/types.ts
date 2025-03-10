@@ -55,6 +55,8 @@ export interface RepoItemType {
   description: string;
   language: string;
   html_url: string;
+  stargazers_count: number;
+  forks_count: number;
 }
 
 export interface OrgItem {
