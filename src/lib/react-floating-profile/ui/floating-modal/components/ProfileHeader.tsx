@@ -6,9 +6,12 @@ interface ProfileHeaderPropTypes {
 }
 
 export default function ProfileHeader({ userObj }: ProfileHeaderPropTypes) {
+  const handleClick = (url: string) => {
+    window.open(url, "_blank");
+  };
   return (
     <div className="profile-header-container">
-      <ProfileIcon avatar_url={userObj.avatar_url} size="large" />
+      <ProfileIcon avatar_url={userObj.avatar_url} size="large" onClickIcon={() => handleClick(userObj.html_url)} />
       <div style={{ width: "80%", paddingLeft: "10px" }}>
         {/*There are cases where the name is missing  */}
         <div className="profile-name">{userObj.name || userObj.login}</div>
