@@ -7,7 +7,7 @@ import FloatingIcon from "./floating-icon";
 import { GitHubUser, RepoItemType } from "@types";
 import { getRepoItem, getUserProfile } from "@api";
 import { ProfileProvider } from "@context";
-
+// 에러 발견
 export default function ReactFloatingProfile({ userName, pinnedRepoArr = [], location = "bottom-right" }: MainOption) {
   const [userObj, setUserObj] = useState<GitHubUser | null>(null);
   const [pinnedRepoItemArr, setPinnedRepoItemArr] = useState<RepoItemType[] | []>([]);
