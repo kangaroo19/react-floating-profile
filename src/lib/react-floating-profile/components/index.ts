@@ -1,2 +1,3 @@
-export { default as ProfileIcon } from "./ProfileIcon";
+export { ProfileIcon } from "./Icon";
+export { OrganizationIcon } from "./Icon";
 export { CloseButton } from "./Button";

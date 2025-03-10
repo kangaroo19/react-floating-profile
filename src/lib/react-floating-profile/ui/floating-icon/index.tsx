@@ -12,7 +12,7 @@ export default function FloatingIcon({ avatar_url }: FloatingIconPropTypes) {
   };
   return (
     <div className="icon-button-container">
-      <ProfileIcon avatar_url={avatar_url} onClickIcon={onClickIcon} size="large" action />
+      <ProfileIcon avatar_url={avatar_url} onClickIcon={onClickIcon} />
     </div>
   );
 }

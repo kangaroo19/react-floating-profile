@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import { PinnedRepo, ProfileHeader, ReadMe } from "./components";
-import { ModalOption } from "@types";
-import { getUserReadme } from "@api";
+import { Organization, PinnedRepo, ProfileHeader, ReadMe } from "./components";
+import { ModalOption, OrgItem } from "@types";
+import { getOrganizations, getUserReadme } from "@api";
 import { CloseButton } from "@components";
 import { useProfile } from "@context";
 
@@ -10,12 +10,15 @@ import { useProfile } from "@context";
 export default function FloatingModal({ userObj, pinnedRepoArr }: ModalOption) {
   const { isOpen } = useProfile();
   const [readme, setReadme] = useState("");
+  const [orgArr, setOrgArr] = useState<OrgItem[]>([]);
   useEffect(() => {
-    getUserReadme(userObj.login)
-      .then((data) => {
-        setReadme(data);
-      })
-      .catch((error) => console.error("❌ 업데이트 실패:", error));
+    const fetchData = async () => {
+      const readmeTemp = await getUserReadme(userObj.login);
+      const orgTemp = await getOrganizations(userObj.organizations_url);
+      setReadme(readmeTemp);
+      setOrgArr(orgTemp);
+    };
+    fetchData();
   }, []);
   return (
     <>
@@ -24,6 +27,7 @@ export default function FloatingModal({ userObj, pinnedRepoArr }: ModalOption) {
           <div className="modal-content">
             <CloseButton />
             <ProfileHeader userObj={userObj} />
+            <Organization orgArr={orgArr} />
             <ReadMe content={readme} />
             <PinnedRepo pinnedRepoArr={pinnedRepoArr!} />
           </div>
