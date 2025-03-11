@@ -1,4 +1,5 @@
 import { RepoItemType } from "@types";
+import addCommasToNumber from "@util/addCommasToNumber";
 
 interface PinnedRepoItemPropTypes {
   pinnedRepoArr: RepoItemType[];
@@ -15,7 +16,10 @@ export default function PinnedRepo({ pinnedRepoArr }: PinnedRepoItemPropTypes) {
                 {item.name}
               </a>
               <div className="repo-desc">{item.description}</div>
-              <div className="repo-lan">{item.language}</div>
+              <div className="repo-lan">
+                {item.language || "No Langauge"} {`/ ${addCommasToNumber(item.stargazers_count)} Stars`}{" "}
+                {`/ ${addCommasToNumber(item.forks_count)} Fork`}
+              </div>
             </div>
           ))}
         </div>
