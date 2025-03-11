@@ -38,7 +38,8 @@ export interface GitHubUser {
 export interface MainOption {
   userName: string;
   pinnedRepoArr: [] | [string] | [string, string] | [string, string, string] | [string, string, string, string];
-  location: "top-right" | "top-center" | "top-left" | "bottom-right" | "bottom-center" | "bottom-left";
+  location?: "top-right" | "top-center" | "top-left" | "bottom-right" | "bottom-center" | "bottom-left";
+  accessToken?: string;
 }
 
 export interface ModalOption {

@@ -9,7 +9,6 @@ interface ReadMePropTypes {
 }
 
 export default function ReadMe({ content }: ReadMePropTypes) {
-  console.log(content);
   return (
     <Markdown
       className="readme-container"

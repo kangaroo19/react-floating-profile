@@ -1,34 +1,24 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import "./style.css";
-import FloatingModal from "./floating-modal";
-import FloatingIcon from "./floating-icon";
-import { GitHubUser, RepoItemType } from "@types";
-import { getRepoItem, getUserProfile } from "@api";
+import { MainOption } from "@types";
 import { ProfileProvider } from "@context";
+import FloatingProfileContainer from "./floating-profile-container";
 // 에러 발견
-export default function ReactFloatingProfile({ userName, pinnedRepoArr = [], location = "bottom-right" }: MainOption) {
-  const [userObj, setUserObj] = useState<GitHubUser | null>(null);
-  const [pinnedRepoItemArr, setPinnedRepoItemArr] = useState<RepoItemType[] | []>([]);
-  useEffect(() => {
-    // 여기서 모든 api 요청 하는게 나을듯
-    getUserProfile(userName)
-      .then((data) => setUserObj(data))
-      .catch(() => console.error("유저정보 못 가져옴"));
-
-    getRepoItem(userName, pinnedRepoArr)
-      .then((data) => setPinnedRepoItemArr(data))
-      .catch(() => console.error("레포정보 못 가져옴"));
-  }, []);
+export default function ReactFloatingProfile({
+  userName,
+  pinnedRepoArr = [],
+  location = "bottom-right",
+  accessToken,
+}: MainOption) {
   return (
-    <>
-      {userObj && (
-        <ProfileProvider>
-          <FloatingIcon avatar_url={userObj.avatar_url} />
-          <FloatingModal userObj={userObj} pinnedRepoArr={pinnedRepoItemArr} />
-        </ProfileProvider>
-      )}
-    </>
+    <ProfileProvider>
+      <FloatingProfileContainer
+        userName={userName}
+        pinnedRepoArr={pinnedRepoArr}
+        location={location}
+        accessToken={accessToken}
+      />
+    </ProfileProvider>
   );
 }
