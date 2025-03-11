@@ -96,6 +96,8 @@
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   width: 450px;
+  height: 800px;
+  overflow-y: scroll;
   position: fixed;
   bottom: 20px; /* 아이콘 바로 위 */
   right: 20px;
