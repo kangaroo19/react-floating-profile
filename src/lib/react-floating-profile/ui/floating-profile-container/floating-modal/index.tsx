@@ -4,17 +4,19 @@ import { ModalOption, OrgItem } from "@types";
 import { getOrganizations, getUserReadme } from "@api";
 import { CloseButton } from "@components";
 import { useProfile } from "@context";
+import { useAuth } from "@context/AuthProvider";
 
 // SagathiyaJaydeep 얘처럼 이름이 없는경우도 있음
 
 export default function FloatingModal({ userObj, pinnedRepoArr }: ModalOption) {
+  const { accessToken } = useAuth();
   const { isOpen } = useProfile();
   const [readme, setReadme] = useState("");
   const [orgArr, setOrgArr] = useState<OrgItem[]>([]);
   useEffect(() => {
     const fetchData = async () => {
-      const readmeTemp = await getUserReadme(userObj.login);
-      const orgTemp = await getOrganizations(userObj.organizations_url);
+      const readmeTemp = await getUserReadme(userObj.login, accessToken!);
+      const orgTemp = await getOrganizations(userObj.organizations_url, accessToken!);
       setReadme(readmeTemp);
       setOrgArr(orgTemp);
     };

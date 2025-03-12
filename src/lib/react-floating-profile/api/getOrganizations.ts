@@ -1,9 +1,10 @@
 import { OrgItem } from "@types";
 
-export default async function getOrganizations(organizations_url: string): Promise<OrgItem[]> {
+export default async function getOrganizations(organizations_url: string, accessToken: string): Promise<OrgItem[]> {
   const response = await fetch(organizations_url, {
     method: "GET",
     headers: {
+      ...(accessToken ? { Authorization: `Bearer ${accessToken}` } : {}),
       Accept: "application/vnd.github+json",
       "X-GitHub-Api-Version": "2022-11-28",
       "Content-Type": "application/json",

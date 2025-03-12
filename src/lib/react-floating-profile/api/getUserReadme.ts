@@ -1,10 +1,11 @@
-export default async function getUserReadme(username: string) {
+export default async function getUserReadme(username: string, accessToken: string) {
   const README_OBJ_URL = `https://api.github.com/repos/${username}/${username}/contents/README.md`;
 
   // README 파일 정보 가져오기
   const objResponse = await fetch(README_OBJ_URL, {
     method: "GET",
     headers: {
+      ...(accessToken ? { Authorization: `Bearer ${accessToken}` } : {}),
       Accept: "application/vnd.github+json",
     },
   });

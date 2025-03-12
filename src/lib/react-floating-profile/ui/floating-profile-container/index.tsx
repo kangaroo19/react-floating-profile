@@ -4,21 +4,22 @@ import FloatingModal from "./floating-modal";
 import { useEffect } from "react";
 import { getRepoItem, getUserProfile } from "@api";
 import { useProfile } from "@context";
+import { useAuth } from "@context/AuthProvider";
 
 export default function FloatingProfileContainer({
   userName,
   pinnedRepoArr = [],
   location = "bottom-right",
-  accessToken,
 }: MainOption) {
+  const { accessToken } = useAuth();
   const { userObj, setUserObj, pinnedRepoItemArr, setPinnedRepoItemArr } = useProfile();
   useEffect(() => {
     // 여기서 모든 api 요청 하는게 나을듯
-    getUserProfile(userName)
+    getUserProfile(userName, accessToken!)
       .then((data) => setUserObj(data))
       .catch(() => console.error("유저정보 못 가져옴"));
 
-    getRepoItem(userName, pinnedRepoArr)
+    getRepoItem(userName, pinnedRepoArr, accessToken!)
       .then((data) => setPinnedRepoItemArr(data))
       .catch(() => console.error("레포정보 못 가져옴"));
   }, []);

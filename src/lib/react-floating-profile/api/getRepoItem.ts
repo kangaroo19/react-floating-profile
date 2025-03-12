@@ -1,6 +1,10 @@
 import { RepoItemType } from "../types";
 
-export default async function getRepoItem(username: string, pinnedRepoItemArr: string[]): Promise<RepoItemType[]> {
+export default async function getRepoItem(
+  username: string,
+  pinnedRepoItemArr: string[],
+  accessToken: string
+): Promise<RepoItemType[]> {
   const REPO_URL = `https://api.github.com/repos/${username}/`;
 
   // 병렬 요청 처리
@@ -8,6 +12,7 @@ export default async function getRepoItem(username: string, pinnedRepoItemArr: s
     const response = await fetch(`${REPO_URL}${repoName}`, {
       method: "GET",
       headers: {
+        ...(accessToken ? { Authorization: `Bearer ${accessToken}` } : {}),
         "Content-Type": "application/json",
       },
     });
