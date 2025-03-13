@@ -89,7 +89,25 @@
 /* Floating-Icon END*/
 
 /* ProfileModal COMPONENT, Top-level class */
+.modal-overlay {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+}
+.modal-overlay.show {
+  opacity: 1;
+  visibility: visible;
+}
+.modal-overlay.show .modal-container {
+  transform: translateY(0);
+}
 .modal-container {
+  transform: translateY(20px);
+  transition: transform 0.3s ease-in-out;
   z-index: 99999;
   color-scheme: light dark;
   color: var(--floating-text-white);

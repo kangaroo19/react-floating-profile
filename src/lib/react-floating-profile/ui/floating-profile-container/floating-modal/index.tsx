@@ -3,8 +3,8 @@ import { Organization, PinnedRepo, ProfileHeader, ReadMe } from "./components";
 import { ModalOption, OrgItem } from "@types";
 import { getOrganizations, getUserReadme } from "@api";
 import { CloseButton } from "@components";
+import { useAuth } from "@context";
 import { useProfile } from "@context";
-import { useAuth } from "@context/AuthProvider";
 
 // SagathiyaJaydeep 얘처럼 이름이 없는경우도 있음
 
@@ -23,18 +23,16 @@ export default function FloatingModal({ userObj, pinnedRepoArr }: ModalOption) {
     fetchData();
   }, []);
   return (
-    <>
-      {isOpen && (
-        <div className="modal-container">
-          <div className="modal-content">
-            <CloseButton />
-            <ProfileHeader userObj={userObj} />
-            <Organization orgArr={orgArr} />
-            <ReadMe content={readme} />
-            <PinnedRepo pinnedRepoArr={pinnedRepoArr!} />
-          </div>
+    <div className={`modal-overlay ${isOpen ? "show" : ""}`}>
+      <div className="modal-container">
+        <div className="modal-content">
+          <CloseButton />
+          <ProfileHeader userObj={userObj} />
+          <Organization orgArr={orgArr} />
+          <ReadMe content={readme} />
+          <PinnedRepo pinnedRepoArr={pinnedRepoArr!} />
         </div>
-      )}
-    </>
+      </div>
+    </div>
   );
 }
