@@ -20,8 +20,7 @@
     "types": ["vite/client"], // 추가
     "baseUrl": "src/lib/react-floating-profile",
     "paths": {
-      "@*": ["*"],
-      "@context/*": ["lib/react-floating-profile/context/*"] // 개별 파일 접근 가능하도록 추가
+      "@context": ["context/index.ts"] // 개별 파일 접근 가능하도록 추가
     }
   },
   "include": ["./src/lib/**/*.tsx", "./src/lib/**/*.ts"],
