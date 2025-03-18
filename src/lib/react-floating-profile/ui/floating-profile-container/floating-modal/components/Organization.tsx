@@ -1,6 +1,6 @@
 import { OrganizationIcon } from "@components";
 import { OrgItem } from "@types";
-import onNavigate from "@util/onNavigate";
+import { onNavigate } from "@util";
 
 interface OrganizationPropTypes {
   orgArr: OrgItem[];

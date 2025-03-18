@@ -1,6 +1,6 @@
 import { ProfileIcon } from "@components";
 import { GitHubUser } from "@types";
-import onNavigate from "@util/onNavigate";
+import { onNavigate } from "@util";
 
 interface ProfileHeaderPropTypes {
   userObj: GitHubUser;

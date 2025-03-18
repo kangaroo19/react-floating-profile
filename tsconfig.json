@@ -18,13 +18,14 @@
     "declaration": true,
     "outDir": "./dist",
     "types": ["vite/client"], // 추가
-    "baseUrl": "src",
+    "baseUrl": "src/lib/react-floating-profile",
+
     "paths": {
-      "@context": ["lib/react-floating-profile/context/index.ts"],
-      "@api": ["lib/react-floating-profile/api/index.ts"],
-      "@types": ["lib/react-floating-profile/types/index.ts"],
-      "@util": ["lib/react-floating-profile/util/index.ts"],
-      "@components": ["lib/react-floating-profile/components/index.ts"]
+      "@context": ["./context/index.ts"],
+      "@api": ["./api/index.ts"],
+      "@types": ["./types/index.ts"],
+      "@util": ["./util/index.ts"],
+      "@components": ["./components/index.ts"]
     }
   },
   "include": ["./src/lib/**/*.tsx", "./src/lib/**/*.ts"],

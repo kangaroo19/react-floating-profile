@@ -2,8 +2,8 @@ import { MainOption } from "@types";
 import FloatingIcon from "./floating-icon";
 import FloatingModal from "./floating-modal";
 import { useEffect } from "react";
-import { getRepoItem, getUserProfile } from "@api";
 import { useAuth, useProfile } from "@context";
+import { getRepoItem, getUserProfile } from "@api";
 
 export default function FloatingProfileContainer({ userName, pinnedRepoArr = [] }: MainOption) {
   const { accessToken } = useAuth();

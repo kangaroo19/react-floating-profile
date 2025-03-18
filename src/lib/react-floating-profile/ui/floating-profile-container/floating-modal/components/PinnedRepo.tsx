@@ -1,5 +1,5 @@
 import { RepoItemType } from "@types";
-import addCommasToNumber from "@util/addCommasToNumber";
+import { addCommasToNumber } from "@util";
 
 interface PinnedRepoItemPropTypes {
   pinnedRepoArr: RepoItemType[];

@@ -2,8 +2,8 @@
 
 import "./style.css";
 import FloatingProfileContainer from "./floating-profile-container";
-import { AuthProvider, ProfileProvider } from "@context";
 import { MainOption } from "../types";
+import { AuthProvider, ProfileProvider } from "../context";
 // 에러 발견
 export default function ReactFloatingProfile({
   userName,
