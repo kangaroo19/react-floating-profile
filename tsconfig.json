@@ -21,11 +21,11 @@
     "baseUrl": "src/lib/react-floating-profile",
 
     "paths": {
-      "@context": ["./context/index.ts"],
-      "@api": ["./api/index.ts"],
-      "@types": ["./types/index.ts"],
-      "@util": ["./util/index.ts"],
-      "@components": ["./components/index.ts"]
+      "@context": ["./context"],
+      "@api": ["./api"],
+      "@types": ["./types"],
+      "@util": ["./util"],
+      "@components": ["./components"]
     }
   },
   "include": ["./src/lib/**/*.tsx", "./src/lib/**/*.ts"],
