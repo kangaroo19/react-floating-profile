@@ -3,14 +3,12 @@ import { Organization, PinnedRepo, ProfileHeader, ReadMe } from "./components";
 import { ModalOption, OrgItem } from "@types";
 import { getOrganizations, getUserReadme } from "@api";
 import { CloseButton } from "@components";
-import { useAuth } from "@context";
 import { useProfile } from "@context";
 
 // SagathiyaJaydeep 얘처럼 이름이 없는경우도 있음
 
 export default function FloatingModal({ userObj, pinnedRepoArr }: ModalOption) {
-  const { accessToken } = useAuth();
-  const { isOpen } = useProfile();
+  const { isOpen, accessToken } = useProfile();
   const [readme, setReadme] = useState("");
   const [orgArr, setOrgArr] = useState<OrgItem[]>([]);
   useEffect(() => {

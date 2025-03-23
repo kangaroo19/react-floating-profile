@@ -3,7 +3,7 @@
 import "./style.css";
 import FloatingProfileContainer from "./floating-profile-container";
 import { MainOption } from "../types";
-import { AuthProvider, ProfileProvider } from "../context";
+import { ProfileProvider } from "../context";
 // 에러 발견
 export default function ReactFloatingProfile({
   userName,
@@ -13,9 +13,14 @@ export default function ReactFloatingProfile({
 }: MainOption) {
   return (
     <ProfileProvider>
-      <AuthProvider accessToken={accessToken}>
-        <FloatingProfileContainer userName={userName} pinnedRepoArr={pinnedRepoArr} location={location} />
-      </AuthProvider>
+      {/* <AuthProvider accessToken={accessToken}> */}
+      <FloatingProfileContainer
+        accessToken={accessToken}
+        userName={userName}
+        pinnedRepoArr={pinnedRepoArr}
+        location={location}
+      />
+      {/* </AuthProvider> */}
     </ProfileProvider>
   );
 }
