@@ -1,14 +1,13 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Organization, PinnedRepo, ProfileHeader, ReadMe } from "./components";
 import { ModalOption, OrgItem } from "@types";
 import { getOrganizations, getUserReadme } from "@api";
-import { CloseButton } from "@components";
 import { useProfile } from "@context";
 
 // SagathiyaJaydeep 얘처럼 이름이 없는경우도 있음
 
 export default function FloatingModal({ userObj, pinnedRepoArr }: ModalOption) {
-  const { isOpen, accessToken } = useProfile();
+  const { isOpen, setIsOpen, accessToken } = useProfile();
   const [readme, setReadme] = useState("");
   const [orgArr, setOrgArr] = useState<OrgItem[]>([]);
   useEffect(() => {
@@ -20,11 +19,24 @@ export default function FloatingModal({ userObj, pinnedRepoArr }: ModalOption) {
     };
     fetchData();
   }, []);
+
+  const modalRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (modalRef.current && !modalRef.current.contains(event.target as Node)) {
+        setIsOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
   return (
-    <div className={`modal-overlay ${isOpen ? "show" : ""}`}>
+    <div className={`modal-overlay ${isOpen ? "show" : ""}`} ref={modalRef}>
       <div className="modal-container">
         <div className="modal-content">
-          <CloseButton />
+          {/* <CloseButton /> */}
           <ProfileHeader userObj={userObj} />
           <Organization orgArr={orgArr} />
           <ReadMe content={readme} />

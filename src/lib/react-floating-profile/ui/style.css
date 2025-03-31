@@ -114,7 +114,7 @@
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   width: 450px;
-  height: 800px;
+  max-height: 600px;
   overflow-y: scroll;
   position: fixed;
   bottom: 20px; /* 아이콘 바로 위 */
@@ -189,6 +189,13 @@
 }
 .readme-container img {
   max-width: 100%;
+}
+.close-btn-container {
+  top: 0;
+  position: fixed;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
 }
 .close-btn {
   border: none;

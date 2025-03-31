@@ -18,7 +18,7 @@ function Button({ children, onClick, className }: ButtonProps) {
 export function CloseButton() {
   const { setIsOpen } = useProfile();
   return (
-    <div style={{ width: "100%", display: "flex", justifyContent: "flex-end" }}>
+    <div className="close-btn-container">
       <Button className="close-btn" onClick={() => setIsOpen(false)}>
         <svg
           width={24}

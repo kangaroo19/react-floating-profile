@@ -12,7 +12,7 @@ export default function ReadMe({ content }: ReadMePropTypes) {
   return (
     <Markdown
       className="readme-container"
-      remarkPlugins={[remarkGemoji, remarkGfm, remarkDirective]}
+      remarkPlugins={[remarkGemoji, remarkDirective]}
       children={convertGitHubImageUrls(content)}
       rehypePlugins={[rehypeRaw]}
     />
