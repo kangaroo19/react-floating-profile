@@ -5,7 +5,6 @@ interface IconPropTypes {
   className?: string;
 }
 
-interface ProfileIconPropTypes extends IconPropTypes {}
 /**
  *
  * @param avatar_url 이미지 url
