@@ -35,10 +35,12 @@ export interface GitHubUser {
 }
 
 /* Public Component Type*/
+export type LocationType = "top-right" | "top-left" | "bottom-right" | "bottom-left";
+
 export interface MainOption {
   userName: string;
   pinnedRepoArr: [] | [string] | [string, string] | [string, string, string] | [string, string, string, string];
-  location?: "top-right" | "top-center" | "top-left" | "bottom-right" | "bottom-center" | "bottom-left";
+  location?: LocationType;
   accessToken?: string;
 }
 

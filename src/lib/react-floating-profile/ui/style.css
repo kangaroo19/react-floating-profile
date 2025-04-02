@@ -32,6 +32,12 @@
 
 /* Floating-Icon */
 .icon-button-container {
+  position: fixed;
+  /* top: var(--floating-icon-location);
+  bottom: var(--floating-icon-location);
+  right: var(--floating-icon-location);
+  left: var(--floating-icon-location); */
+
   display: block;
   align-items: center;
   justify-content: center;

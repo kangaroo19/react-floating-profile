@@ -5,7 +5,7 @@ import { useEffect } from "react";
 import { useProfile } from "@context";
 import { getRepoItem, getUserProfile } from "@api";
 
-export default function FloatingProfileContainer({ accessToken, userName, pinnedRepoArr = [] }: MainOption) {
+export default function FloatingProfileContainer({ location, accessToken, userName, pinnedRepoArr = [] }: MainOption) {
   const { userObj, setUserObj, pinnedRepoItemArr, setPinnedRepoItemArr, setAccessToken } = useProfile();
   useEffect(() => {
     setAccessToken(accessToken!);
@@ -22,7 +22,7 @@ export default function FloatingProfileContainer({ accessToken, userName, pinned
     <>
       {userObj && (
         <>
-          <FloatingIcon avatar_url={userObj.avatar_url} />
+          <FloatingIcon avatar_url={userObj.avatar_url} location={location} />
           <FloatingModal userObj={userObj} pinnedRepoArr={pinnedRepoItemArr} />
         </>
       )}
