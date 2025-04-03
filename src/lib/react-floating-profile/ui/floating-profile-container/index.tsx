@@ -2,14 +2,14 @@ import { MainOption } from "@types";
 import FloatingIcon from "./floating-icon";
 import FloatingModal from "./floating-modal";
 import { useEffect } from "react";
-import { useProfile } from "@context";
+import { useAuth, useProfile } from "@context";
 import { getRepoItem, getUserProfile } from "@api";
 
 export default function FloatingProfileContainer({ location, accessToken, userName, pinnedRepoArr = [] }: MainOption) {
-  const { userObj, setUserObj, pinnedRepoItemArr, setPinnedRepoItemArr, setAccessToken } = useProfile();
+  const { userObj, setUserObj, pinnedRepoItemArr, setPinnedRepoItemArr } = useProfile();
+  const { setAccessToken } = useAuth();
   useEffect(() => {
     setAccessToken(accessToken!);
-    // 여기서 모든 api 요청 하는게 나을듯
     getUserProfile(userName, accessToken!)
       .then((data) => setUserObj(data))
       .catch(() => console.error("유저정보 못 가져옴"));
@@ -22,7 +22,7 @@ export default function FloatingProfileContainer({ location, accessToken, userNa
     <>
       {userObj && (
         <>
-          <FloatingIcon avatar_url={userObj.avatar_url} location={location} />
+          <FloatingIcon avatar_url={userObj.avatar_url} location={location!} />
           <FloatingModal userObj={userObj} pinnedRepoArr={pinnedRepoItemArr} />
         </>
       )}

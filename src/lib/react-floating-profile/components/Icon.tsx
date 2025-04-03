@@ -28,6 +28,6 @@ export function ProfileIcon({ avatar_url, size = "large", onClickIcon }: IconPro
 }
 
 // For Organization Icon (Rect shape)
-export function OrganizationIcon({ avatar_url, size = "small", onClickIcon }: ProfileIconPropTypes) {
+export function OrganizationIcon({ avatar_url, size = "small", onClickIcon }: IconPropTypes) {
   return <Icon avatar_url={avatar_url} size={size} onClickIcon={onClickIcon} className="rect-shape" />;
 }

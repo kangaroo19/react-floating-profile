@@ -8,7 +8,7 @@ import { CloseButton } from "@components";
 // SagathiyaJaydeep 얘처럼 이름이 없는경우도 있음
 
 export default function FloatingModal({ userObj, pinnedRepoArr }: ModalOption) {
-  const { isOpen, setIsOpen, accessToken } = useProfile();
+  const { isOpen, accessToken } = useProfile();
   const [readme, setReadme] = useState("");
   const [orgArr, setOrgArr] = useState<OrgItem[]>([]);
   useEffect(() => {

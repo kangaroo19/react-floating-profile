@@ -1,13 +1,16 @@
-import { createContext, useContext, ReactNode } from "react";
+import { createContext, useContext, ReactNode, useState } from "react";
 
 interface AuthContextType {
   accessToken?: string;
+  setAccessToken: (value: string) => void;
 }
 
 const AuthContext = createContext<AuthContextType | null>(null);
 
-export function AuthProvider({ accessToken, children }: { accessToken: string; children: ReactNode }) {
-  return <AuthContext.Provider value={{ accessToken }}>{children}</AuthContext.Provider>;
+export function AuthProvider({ children }: { children: ReactNode }) {
+  const [accessToken, setAccessToken] = useState<string>("");
+
+  return <AuthContext.Provider value={{ accessToken, setAccessToken }}>{children}</AuthContext.Provider>;
 }
 
 export function useAuth() {
