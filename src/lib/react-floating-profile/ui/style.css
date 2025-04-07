@@ -156,7 +156,8 @@
 }
 .profile-name,
 .profile-login-location,
-.profile-bio {
+.profile-bio,
+.profile-link {
   text-align: left;
 }
 .profile-login-location,
@@ -223,6 +224,10 @@
   text-decoration: none;
   font-size: var(--floating-text-md);
   font-weight: 700;
+  color: var(--flaoting-text-blue);
+  display: block;
+}
+.repo-title:hover {
   color: var(--flaoting-text-blue);
 }
 .repo-title,
