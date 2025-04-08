@@ -15,7 +15,7 @@ interface IconPropTypes {
 function Icon({ avatar_url, size = "medium", className, onClickIcon }: IconPropTypes) {
   return (
     <>
-      <button className={`icon-${size} icon-button ${className}-container`} onClick={onClickIcon}>
+      <button className={`icon icon-${size} icon-button ${className}-container`} onClick={onClickIcon}>
         <img src={avatar_url} alt="" className={`${className}`} />
       </button>
     </>

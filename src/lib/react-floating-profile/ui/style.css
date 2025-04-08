@@ -74,6 +74,9 @@
 .rect-shape {
   border-radius: 10%;
 }
+.icon:hover {
+  border: none;
+}
 .icon-large {
   width: 60px;
   height: 60px;
@@ -170,6 +173,7 @@
 .profile-link {
   text-decoration: underline;
   color: inherit;
+  display: block;
 }
 /* ProfileHeader COMPONENT END*/
 
