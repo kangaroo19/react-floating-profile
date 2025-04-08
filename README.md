@@ -31,6 +31,7 @@ function App() {
       accessToken="your_token_here"
       // 💡 accessToken is not required, but it's recommended to avoid GitHub API rate limits.
       pinnedRepoArr={["repo1", "repo2"]}
+      location="top-right"
     />
   );
 }
