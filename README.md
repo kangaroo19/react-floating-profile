@@ -43,7 +43,7 @@ You can get a token [here](https://github.com/settings/tokens)
 | Prop Name       | Type                                                                 | Required | Default         | Description                                                                 |
 |----------------|----------------------------------------------------------------------|----------|------------------|-----------------------------------------------------------------------------|
 | `userName`      | `string`                                                              | ✅       | —                | GitHub username to fetch and display profile information.                   |
-| `pinnedRepoArr` | `[]` \| `[string]` \| `[string, string]` \| `[string, string, string]` \| `[string, string, string, string]` | ✅       | `[]`             | List of pinned repositories to display. Supports up to 4 items.             |
+| `pinnedRepoArr` | `[]` \| `[string]` \| `[string, string]` \| `[string, string, string]` \| `[string, string, string, string]` | ❌       | `[]`             | List of pinned repositories to display. Supports up to 4 items.             |
 | `location`      | `"top-right"` \| `"top-left"` \| `"bottom-right"` \| `"bottom-left"`       | ❌       | `"bottom-right"` | Position of the floating widget on the screen.                              |
 | `accessToken`   | `string`                                                              | ❌       | `""`             | GitHub access token to increase API request limits. Recommended but optional. |
 
