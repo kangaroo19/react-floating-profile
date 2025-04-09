@@ -37,6 +37,7 @@ function App() {
 }
 ```
 You can get a token [here](https://github.com/settings/tokens)
+Check the read:user permission
 
 ## Props
 
