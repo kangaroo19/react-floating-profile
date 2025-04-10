@@ -28,6 +28,6 @@
       "@components": ["./components"]
     }
   },
-  "include": ["./src/lib/**/*.tsx", "./src/lib/**/*.ts"],
+  "include": ["./src/lib/**/*.tsx", "./src/lib/**/*.ts", "src/demo/**/*"],
   "exclude": ["node_modules", "src/App.tsx", "src/main.tsx"]
 }
