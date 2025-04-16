@@ -19,7 +19,6 @@
     "outDir": "./dist",
     "types": ["vite/client"], // 추가
     "baseUrl": "src/lib/react-floating-profile",
-
     "paths": {
       "@context": ["./context"],
       "@api": ["./api"],

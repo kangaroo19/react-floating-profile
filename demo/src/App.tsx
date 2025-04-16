@@ -1,18 +1,19 @@
-import React from "react";
-import ReactFloatingProfile from "../lib/react-floating-profile/ui/ReactFloatingProfile";
-
+import ReactFloatingProfile from "react-floating-profile";
+import "./App.css";
 const token = import.meta.env.VITE_GITHUB_TOKEN;
 
-export default function DemoPage() {
+function App() {
   return (
-    <div>
-      데모페이지 입니다.{" "}
+    <>
+      This page is demo for react-flaoting-profile
       <ReactFloatingProfile
         accessToken={token}
         userName="kangaroo19"
         pinnedRepoArr={["mbti-app", "chatting", "CodingTest", "toDo_List"]}
         location="top-right"
       />
-    </div>
+    </>
   );
 }
+
+export default App;
