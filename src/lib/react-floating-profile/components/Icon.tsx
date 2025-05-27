@@ -2,7 +2,7 @@ interface IconPropTypes {
   avatar_url: string;
   size?: "small" | "medium" | "large";
   onClickIcon?: () => void; // onClick 함수 추가
-  className?: string;
+  className?: "circle-shape" | "rect-shape";
 }
 
 /**

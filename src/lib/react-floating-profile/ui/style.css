@@ -18,18 +18,33 @@
   --floating-text-xs: 0.8rem;
   --floating-border-thin: 1px solid var(--floating-color-light);
   --floating-border-thick: 2px solid var(--floating-color-light);
+  --floating-border-super-thick: 3px solid var(--floating-color-light);
+  --floating-line-height-tight: 1.2;
+  --floating-line-height-normal: 1.4;
+  --floating-line-height-relaxed: 1.6;
 }
 *::-webkit-scrollbar {
   display: none;
 }
 
-* {
+/* CSS Reset for consistent styling across environments */
+.floating-profile-container {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* padding과 border가 요소 크기에 포함되도록 설정 */
+  max-width: 100%; /* 요소가 부모 크기를 넘지 않도록 제한 */
+  -ms-overflow-style: none; /* 인터넷 익스플로러 */
+  scrollbar-width: none;
+}
+
+.floating-profile-container {
   box-sizing: border-box; /* padding과 border가 요소 크기에 포함되도록 설정 */
   max-width: 100%; /* 요소가 부모 크기를 넘지 않도록 제한 */
   -ms-overflow-style: none; /* 인터넷 익스플로러 */
   scrollbar-width: none; /* 파이어폭스 */
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", sans-serif;
+  line-height: var(--floating-line-height-normal);
 }
-
 /* Floating-Icon */
 .icon-button-container {
   position: fixed;
@@ -50,14 +65,13 @@
 
 .icon-button {
   padding: 0;
-  background-color: var(--floating-color-light);
+  background-color: var(--floating-color-medium);
   cursor: pointer;
 }
 
 .icon-button > img {
   width: 100%;
   height: 100%;
-  /* object-fit: cover; */
 }
 .icon-button:active {
   transform: scale(0.95);
@@ -80,7 +94,7 @@
 .icon-large {
   width: 60px;
   height: 60px;
-  border: var(--floating-border-thick);
+  border: var(--floating-border-super-thick);
 }
 .icon-medium {
   width: 40px;
@@ -156,6 +170,8 @@
 .profile-name {
   font-weight: 700;
   font-size: var(--floating-text-xl);
+  line-height: var(--floating-line-height-tight);
+  margin: 0;
 }
 .profile-name,
 .profile-login-location,
@@ -166,6 +182,8 @@
 .profile-login-location,
 .profile-bio {
   font-size: var(--floating-text-sm);
+  line-height: var(--floating-line-height-normal);
+  margin: 0;
 }
 .profile-login {
   font-weight: 700;
@@ -230,6 +248,9 @@
   font-weight: 700;
   color: var(--flaoting-text-blue);
   display: block;
+  line-height: var(--floating-line-height-tight);
+  margin: 0;
+  padding: 0;
 }
 .repo-title:hover {
   color: var(--flaoting-text-blue);
@@ -242,6 +263,8 @@
 }
 .repo-desc {
   font-size: var(--floating-text-sm);
+  line-height: var(--floating-line-height-normal);
+  margin: 0.25rem 0;
 }
 .repo-label {
   font-weight: 700;
@@ -252,6 +275,8 @@
 .repo-lan {
   color: var(--floating-text-gray);
   font-size: var(--floating-text-xs);
+  line-height: var(--floating-line-height-normal);
+  margin: 0;
 }
 /* PinnedRepo COMPONENT END */
 

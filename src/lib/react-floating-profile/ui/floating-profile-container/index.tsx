@@ -19,13 +19,13 @@ export default function FloatingProfileContainer({ location, accessToken, userNa
       .catch(() => console.error("레포정보 못 가져옴"));
   }, []);
   return (
-    <>
+    <div className="floating-profile-container">
       {userObj && (
         <>
           <FloatingIcon avatar_url={userObj.avatar_url} location={location!} />
           <FloatingModal userObj={userObj} pinnedRepoArr={pinnedRepoItemArr} />
         </>
       )}
-    </>
+    </div>
   );
 }
