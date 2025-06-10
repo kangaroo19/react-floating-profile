@@ -1,29 +1,29 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import ReactFloatingProfile from "react-floating-profile";
 import Layout from "./components/layout/Layout";
 
 function App() {
-  const [userName, setUserName] = useState("kangaroo19");
-  const [inputValue, setInputValue] = useState("kangaroo19");
-
+  const [inputValue, setInputValue] = useState("");
+  const [profileComponent, setProfileComponent] = useState<JSX.Element | null>(null);
   const handleApply = () => {
-    setUserName(inputValue);
-    console.log(inputValue);
-    return (
+    setProfileComponent(
       <ReactFloatingProfile
-        userName="kangaroo19"
-        pinnedRepoArr={["mbti-app", "chatting", "CodingTest", "toDo_List"]}
+        accessToken={import.meta.env.VITE_GITHUB_TOKEN || ""}
+        userName={inputValue}
+        // pinnedRepoArr={["mbti-app", "chatting", "CodingTest", "toDo_List"]}
         location="top-right"
       />
     );
+    setInputValue("");
   };
+
   return (
     <Layout>
       {/* Main Content */}
       <main className="max-w-6xl mx-auto px-4 py-8">
         {/* Hero Section */}
         <section className="text-center mb-12">
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">React Floating Profile Component</h1>
+          <h1 className="text-4xl font-bold text-gray-900 mb-4">React Floating Profile</h1>
           <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
             GitHub 스타일의 프로필을 표시하는 React 컴포넌트입니다. 사용자의 GitHub 정보, 조직, 고정된 저장소를 아름답게
             보여줍니다.
@@ -53,7 +53,10 @@ function App() {
                 <input
                   type="text"
                   value={inputValue}
-                  onChange={(e) => setInputValue(e.target.value)}
+                  onChange={(e) => {
+                    setProfileComponent(null);
+                    setInputValue(e.target.value);
+                  }}
                   className="w-full pl-10 pr-4 py-3 text-sm border border-gray-300 rounded-md bg-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
                   placeholder="GitHub username"
                   autoComplete="off"
@@ -71,7 +74,6 @@ function App() {
             </div>
           </div>
         </section>
-
         {/* Demo Section */}
         <section className="bg-white rounded-lg border border-gray-200 shadow-sm p-8 mb-8">
           <h2 className="text-2xl font-bold text-gray-900 mb-6 text-center">🚀 Live Demo</h2>
@@ -87,7 +89,6 @@ function App() {
             </div>
           </div>
         </section>
-
         {/* Features Section */}
         <section className="grid md:grid-cols-3 gap-6 mb-8">
           <div className="bg-white rounded-lg border border-gray-200 p-6">
@@ -106,7 +107,6 @@ function App() {
             <p className="text-gray-600">선택한 저장소들을 하이라이트로 표시합니다.</p>
           </div>
         </section>
-
         {/* Code Example */}
         <section className="bg-white rounded-lg border border-gray-200 shadow-sm p-8">
           <h2 className="text-2xl font-bold text-gray-900 mb-6">💻 사용 방법</h2>
@@ -126,10 +126,11 @@ function App() {
 }`}</code>
             </pre>
           </div>
-        </section>
+        </section>{" "}
       </main>
 
       {/* React Floating Profile Component */}
+      {profileComponent}
     </Layout>
   );
 }
