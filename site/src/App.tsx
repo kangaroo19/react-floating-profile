@@ -39,9 +39,10 @@ function App() {
         {/* Hero Section */}
         <section className="text-center mb-12">
           <h1 className="text-4xl font-bold text-gray-900 mb-4">React Floating Profile</h1>
-            <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
-            A React component that displays a GitHub-style profile. Beautifully shows a user's GitHub info, organizations, and pinned repositories.
-            </p>
+          <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
+            A React component that displays a GitHub-style profile. Beautifully shows a user's GitHub info,
+            organizations, and pinned repositories.
+          </p>
           <div className="flex justify-center space-x-4 mb-6">
             <span className="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">⚡ Fast</span>
             <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">🎨 Beautiful</span>
@@ -91,17 +92,6 @@ function App() {
                     <input
                       type="radio"
                       name="location"
-                      value="top-right"
-                      checked={location === "top-right"}
-                      onChange={(e) => setLocation(e.target.value as LocationType)}
-                      className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 focus:ring-2"
-                    />
-                    <span className="text-sm text-gray-700">Top Right</span>
-                  </label>
-                  <label className="flex items-center space-x-2 cursor-pointer">
-                    <input
-                      type="radio"
-                      name="location"
                       value="top-left"
                       checked={location === "top-left"}
                       onChange={(e) => setLocation(e.target.value as LocationType)}
@@ -113,12 +103,12 @@ function App() {
                     <input
                       type="radio"
                       name="location"
-                      value="bottom-right"
-                      checked={location === "bottom-right"}
+                      value="top-right"
+                      checked={location === "top-right"}
                       onChange={(e) => setLocation(e.target.value as LocationType)}
                       className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 focus:ring-2"
                     />
-                    <span className="text-sm text-gray-700">Bottom Right</span>
+                    <span className="text-sm text-gray-700">Top Right</span>
                   </label>
                   <label className="flex items-center space-x-2 cursor-pointer">
                     <input
@@ -130,6 +120,17 @@ function App() {
                       className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 focus:ring-2"
                     />
                     <span className="text-sm text-gray-700">Bottom Left</span>
+                  </label>
+                  <label className="flex items-center space-x-2 cursor-pointer">
+                    <input
+                      type="radio"
+                      name="location"
+                      value="bottom-right"
+                      checked={location === "bottom-right"}
+                      onChange={(e) => setLocation(e.target.value as LocationType)}
+                      className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 focus:ring-2"
+                    />
+                    <span className="text-sm text-gray-700">Bottom Right</span>
                   </label>
                 </div>
               </div>
@@ -185,62 +186,7 @@ function App() {
             </div>
           </div>
         </section>
-        {/* Demo Section */}
-        <section className="bg-white rounded-lg border border-gray-200 shadow-sm p-8 mb-8">
-          <h2 className="text-2xl font-bold text-gray-900 mb-6 text-center">🚀 Live Demo</h2>
-          <div className="bg-gray-50 rounded-lg p-6 mb-6">
-            <p className="text-gray-600 text-center mb-4">오른쪽 상단의 프로필 아이콘을 클릭해보세요!</p>
-            <div className="text-center">
-              <div className="inline-flex items-center space-x-2 bg-white px-4 py-2 rounded-lg border border-gray-200">
-                <span className="text-gray-500">👆</span>
-                <span className="text-gray-700">프로필 아이콘 클릭</span>
-                <span className="text-gray-500">→</span>
-                <span className="text-blue-600 font-medium">모달 열기</span>
-              </div>
-            </div>
-          </div>
-        </section>
-        {/* Features Section */}
-        <section className="grid md:grid-cols-3 gap-6 mb-8">
-          <div className="bg-white rounded-lg border border-gray-200 p-6">
-            <div className="text-3xl mb-4">👤</div>
-            <h3 className="text-lg font-semibold text-gray-900 mb-2">사용자 프로필</h3>
-            <p className="text-gray-600">GitHub 사용자의 기본 정보와 통계를 표시합니다.</p>
-          </div>
-          <div className="bg-white rounded-lg border border-gray-200 p-6">
-            <div className="text-3xl mb-4">🏢</div>
-            <h3 className="text-lg font-semibold text-gray-900 mb-2">조직 정보</h3>
-            <p className="text-gray-600">사용자가 속한 GitHub 조직들을 보여줍니다.</p>
-          </div>
-          <div className="bg-white rounded-lg border border-gray-200 p-6">
-            <div className="text-3xl mb-4">📌</div>
-            <h3 className="text-lg font-semibold text-gray-900 mb-2">고정 저장소</h3>
-            <p className="text-gray-600">선택한 저장소들을 하이라이트로 표시합니다.</p>
-          </div>
-        </section>
-        {/* Code Example */}
-        <section className="bg-white rounded-lg border border-gray-200 shadow-sm p-8">
-          <h2 className="text-2xl font-bold text-gray-900 mb-6">💻 사용 방법</h2>
-          <div className="bg-gray-900 rounded-lg p-6 overflow-x-auto">
-            <pre className="text-green-400 text-sm">
-              <code>{`import ReactFloatingProfile from "react-floating-profile";
-
-function App() {
-  return (
-    <ReactFloatingProfile
-      accessToken="your-github-token"
-      userName="your-username"
-      pinnedRepoArr={["repo1", "repo2", "repo3"]}
-      location="top-right"
-    />
-  );
-}`}</code>
-            </pre>
-          </div>
-        </section>{" "}
       </main>
-
-      {/* React Floating Profile Component */}
       {profileComponent}
     </Layout>
   );
