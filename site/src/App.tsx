@@ -6,13 +6,14 @@ import type { ReactElement } from "react";
 type LocationType = "top-right" | "top-left" | "bottom-right" | "bottom-left";
 
 function App() {
-  const [userName, setUserName] = useState("");
+  const [userName, setUserName] = useState("kangaroo19");
+  const [accessToken, setAccessToken] = useState("");
   const [location, setLocation] = useState<LocationType>("top-right");
   const [profileComponent, setProfileComponent] = useState<ReactElement | null>(null);
 
   // Pinned Repositories 상태
-  const [repo1, setRepo1] = useState("");
-  const [repo2, setRepo2] = useState("");
+  const [repo1, setRepo1] = useState("neki99");
+  const [repo2, setRepo2] = useState("react-floating-profile");
   const [repo3, setRepo3] = useState("");
   const [repo4, setRepo4] = useState("");
   const handleApply = () => {
@@ -21,7 +22,7 @@ function App() {
 
     setProfileComponent(
       <ReactFloatingProfile
-        accessToken={import.meta.env.VITE_GITHUB_TOKEN || ""}
+        accessToken={accessToken}
         userName={userName}
         pinnedRepoArr={
           pinnedRepos as [] | [string] | [string, string] | [string, string, string] | [string, string, string, string]
@@ -83,7 +84,7 @@ function App() {
                   />{" "}
                 </div>
               </div>
-
+              <div className="mb-4"></div>
               {/* Location 선택 라디오 버튼 */}
               <div className="mt-4">
                 <p className="text-sm font-medium text-gray-700 mb-3 text-left">Position</p>
@@ -136,7 +137,7 @@ function App() {
               </div>
 
               {/* Pinned Repositories 입력 */}
-              <div className="mt-4">
+              <div className="my-4">
                 <p className="text-sm font-medium text-gray-700 mb-3 text-left">Pinned Repositories (Optional)</p>
                 <div className="space-y-2">
                   <input
@@ -173,7 +174,18 @@ function App() {
                   />
                 </div>
               </div>
-
+              <label htmlFor="github-access-token" className="block text-sm font-medium text-gray-700 mb-2 text-left">
+                GitHub Access Token (Optional)
+              </label>
+              <input
+                id="github-access-token"
+                type="text"
+                value={accessToken}
+                onChange={(e) => setAccessToken(e.target.value)}
+                className="w-full px-3 py-2 text-sm border border-gray-300 rounded-md bg-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 mb-4"
+                placeholder="Personal access token (optional)"
+                autoComplete="off"
+              />
               <div className="flex justify-center mt-3">
                 <button
                   onClick={handleApply}
@@ -182,7 +194,7 @@ function App() {
                   Apply
                 </button>
               </div>
-              <p className="mt-2 text-xs text-gray-500 text-center">Enter a GitHub username to see their profile</p>
+              <p className="mt-2 text-xs text-gray-500 text-center">Click apply button to see your profile</p>
             </div>
           </div>
         </section>

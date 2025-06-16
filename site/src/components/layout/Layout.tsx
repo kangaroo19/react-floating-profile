@@ -15,14 +15,14 @@ const Layout = ({ children }: Props) => {
               <h1 className="text-xl font-bold text-gray-900">React Floating Profile</h1>
             </div>
             <nav className="flex items-center space-x-6">
-              <a href="#demo" className="text-gray-600 hover:text-gray-900 text-sm font-medium transition-colors">
-                Demo
-              </a>
-              <a href="#docs" className="text-gray-600 hover:text-gray-900 text-sm font-medium transition-colors">
-                Docs
+              <a
+                href="https://www.npmjs.com/package/react-floating-profile"
+                className="text-gray-600 hover:text-gray-900 text-sm font-medium transition-colors"
+              >
+                npm
               </a>
               <a
-                href="https://github.com/your-username/react-floating-profile"
+                href="https://github.com/kangaroo19/react-floating-profile"
                 className="bg-gray-900 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-gray-800 transition-colors"
                 target="_blank"
                 rel="noopener noreferrer"
