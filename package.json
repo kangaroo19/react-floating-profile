@@ -1,24 +1,29 @@
 {
   "name": "react-floating-profile",
-  "version": "1.1.4",
+  "version": "1.1.8",
   "main": "dist/index.js",
   "type": "module",
   "types": "dist/index.d.ts",
-  "browser": "./browser/specific/main.js",
   "scripts": {
     "dev": "vite",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "prepare": "if exist dist rmdir /s /q dist & mkdir dist & tsc & tsc-alias & xcopy src\\lib\\react-floating-profile\\ui\\style.css dist\\ui\\style.css /y /i"
+    "prepare": "if exist dist rmdir /s /q dist & mkdir dist & mkdir dist\\ui & tsc & tsc-alias & copy /y src\\lib\\react-floating-profile\\ui\\style.css dist\\ui\\style.css"
   },
   "exports": {
     ".": {
+      "types": "./dist/index.d.ts",
       "import": "./dist/index.js",
-      "types": "./dist/index.d.ts"
+      "default": "./dist/index.js"
     }
   },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE.txt"
+  ],
   "dependencies": {
     "module-alias": "^2.2.3",
     "path": "^0.12.7",
@@ -72,7 +77,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/kangaroo19/react-floating-profile.git"
+    "url": "git+https://github.com/kangaroo19/react-floating-profile.git"
   },
   "license": "MIT"
 }
