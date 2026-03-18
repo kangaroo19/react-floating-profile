@@ -1,5 +1,6 @@
 import { useState } from "react";
-import ReactFloatingProfile from "react-floating-profile";
+// import ReactFloatingProfile from "react-floating-profile";
+import ReactFloatingProfile from "../../src/lib/react-floating-profile/ui/ReactFloatingProfile";
 import Layout from "./components/layout/Layout";
 import type { ReactElement } from "react";
 
@@ -9,7 +10,9 @@ function App() {
   const [userName, setUserName] = useState("kangaroo19");
   const [accessToken, setAccessToken] = useState("");
   const [location, setLocation] = useState<LocationType>("top-right");
-  const [profileComponent, setProfileComponent] = useState<ReactElement | null>(null);
+  const [profileComponent, setProfileComponent] = useState<ReactElement | null>(
+    null,
+  );
 
   // Pinned Repositories 상태
   const [repo1, setRepo1] = useState("neki99");
@@ -18,17 +21,24 @@ function App() {
   const [repo4, setRepo4] = useState("");
   const handleApply = () => {
     // 빈 문자열이 아닌 것들만 배열에 포함
-    const pinnedRepos = [repo1, repo2, repo3, repo4].filter((repo) => repo.trim() !== "");
+    const pinnedRepos = [repo1, repo2, repo3, repo4].filter(
+      (repo) => repo.trim() !== "",
+    );
 
     setProfileComponent(
       <ReactFloatingProfile
         accessToken={accessToken}
         userName={userName}
         pinnedRepoArr={
-          pinnedRepos as [] | [string] | [string, string] | [string, string, string] | [string, string, string, string]
+          pinnedRepos as
+            | []
+            | [string]
+            | [string, string]
+            | [string, string, string]
+            | [string, string, string, string]
         }
         location={location}
-      />
+      />,
     );
     setUserName("");
   };
@@ -39,14 +49,20 @@ function App() {
       <main className="max-w-6xl mx-auto px-4 py-8">
         {/* Hero Section */}
         <section className="text-center mb-12">
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">React Floating Profile</h1>
+          <h1 className="text-4xl font-bold text-gray-900 mb-4">
+            React Floating Profile
+          </h1>
           <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
-            A React component that displays a GitHub-style profile. Beautifully shows a user's GitHub info,
-            organizations, and pinned repositories.
+            A React component that displays a GitHub-style profile. Beautifully
+            shows a user's GitHub info, organizations, and pinned repositories.
           </p>
           <div className="flex justify-center space-x-4 mb-6">
-            <span className="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">⚡ Fast</span>
-            <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">🎨 Beautiful</span>
+            <span className="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">
+              ⚡ Fast
+            </span>
+            <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">
+              🎨 Beautiful
+            </span>
             <span className="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm font-medium">
               📱 Responsive
             </span>
@@ -55,7 +71,10 @@ function App() {
           <div className="mt-8">
             <div className="max-w-md mx-auto">
               <div className="mb-4">
-                <label htmlFor="github-username" className="block text-sm font-medium text-gray-700 mb-2 text-left">
+                <label
+                  htmlFor="github-username"
+                  className="block text-sm font-medium text-gray-700 mb-2 text-left"
+                >
                   Your GitHub user ID
                 </label>
                 <div className="relative">
@@ -87,7 +106,9 @@ function App() {
               <div className="mb-4"></div>
               {/* Location 선택 라디오 버튼 */}
               <div className="mt-4">
-                <p className="text-sm font-medium text-gray-700 mb-3 text-left">Position</p>
+                <p className="text-sm font-medium text-gray-700 mb-3 text-left">
+                  Position
+                </p>
                 <div className="grid grid-cols-2 gap-3">
                   <label className="flex items-center space-x-2 cursor-pointer">
                     <input
@@ -95,7 +116,9 @@ function App() {
                       name="location"
                       value="top-left"
                       checked={location === "top-left"}
-                      onChange={(e) => setLocation(e.target.value as LocationType)}
+                      onChange={(e) =>
+                        setLocation(e.target.value as LocationType)
+                      }
                       className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 focus:ring-2"
                     />
                     <span className="text-sm text-gray-700">Top Left</span>
@@ -106,7 +129,9 @@ function App() {
                       name="location"
                       value="top-right"
                       checked={location === "top-right"}
-                      onChange={(e) => setLocation(e.target.value as LocationType)}
+                      onChange={(e) =>
+                        setLocation(e.target.value as LocationType)
+                      }
                       className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 focus:ring-2"
                     />
                     <span className="text-sm text-gray-700">Top Right</span>
@@ -117,7 +142,9 @@ function App() {
                       name="location"
                       value="bottom-left"
                       checked={location === "bottom-left"}
-                      onChange={(e) => setLocation(e.target.value as LocationType)}
+                      onChange={(e) =>
+                        setLocation(e.target.value as LocationType)
+                      }
                       className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 focus:ring-2"
                     />
                     <span className="text-sm text-gray-700">Bottom Left</span>
@@ -128,7 +155,9 @@ function App() {
                       name="location"
                       value="bottom-right"
                       checked={location === "bottom-right"}
-                      onChange={(e) => setLocation(e.target.value as LocationType)}
+                      onChange={(e) =>
+                        setLocation(e.target.value as LocationType)
+                      }
                       className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 focus:ring-2"
                     />
                     <span className="text-sm text-gray-700">Bottom Right</span>
@@ -138,7 +167,9 @@ function App() {
 
               {/* Pinned Repositories 입력 */}
               <div className="my-4">
-                <p className="text-sm font-medium text-gray-700 mb-3 text-left">Pinned Repositories (Optional)</p>
+                <p className="text-sm font-medium text-gray-700 mb-3 text-left">
+                  Pinned Repositories (Optional)
+                </p>
                 <div className="space-y-2">
                   <input
                     type="text"
@@ -174,7 +205,10 @@ function App() {
                   />
                 </div>
               </div>
-              <label htmlFor="github-access-token" className="block text-sm font-medium text-gray-700 mb-2 text-left">
+              <label
+                htmlFor="github-access-token"
+                className="block text-sm font-medium text-gray-700 mb-2 text-left"
+              >
                 GitHub Access Token (Optional)
               </label>
               <input
@@ -194,7 +228,9 @@ function App() {
                   Apply
                 </button>
               </div>
-              <p className="mt-2 text-xs text-gray-500 text-center">Click apply button to see your profile</p>
+              <p className="mt-2 text-xs text-gray-500 text-center">
+                Click apply button to see your profile
+              </p>
             </div>
           </div>
         </section>
